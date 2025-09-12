@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 import os
+import logging
 from openai import OpenAI
 from langchain.vectorstores import Chroma
 from langchain.embeddings.openai import OpenAIEmbeddings
+
+# Initialize logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Make sure your API key is set
 api_key = os.getenv("OPENAI_API_KEY")
@@ -32,13 +36,15 @@ while True:
     try:
         results = vectordb.similarity_search(user_input, k=3)  # Retrieve top 3 relevant chunks
         context = "\n".join([result.page_content for result in results])
+        logging.info(f"ChromaDB Query Results: {results}")  # Log the raw results
     except Exception as e:
-        print(f"Error querying Chroma DB: {e}")
+        logging.error(f"Error querying Chroma DB: {e}")
         context = ""
 
     # Add context to the conversation history
     if context:
         conversation_history.append({"role": "system", "content": f"Relevant context: {context}"})
+        logging.info(f"Context added to conversation: {context}")
 
     conversation_history.append({"role": "user", "content": user_input})
 

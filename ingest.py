@@ -1,6 +1,6 @@
 import os
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_chroma import Chroma  # Updated import for Chroma
+from langchain_openai import OpenAIEmbeddings  # Updated import for OpenAIEmbeddings
 
 # Paths
 RAG_FOLDER = "rag"
@@ -24,5 +24,4 @@ vectordb = Chroma.from_texts(
     collection_name="weather_data"  # Explicitly name the collection
 )
 
-vectordb.persist()
 print(f"Chroma DB updated with {len(texts)} chunks.")

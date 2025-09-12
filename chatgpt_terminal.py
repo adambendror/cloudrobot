@@ -10,7 +10,7 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
-print("=== ChatGPT Terminal ===")
+print("=== Cloud Terminal ===")
 print("Type 'exit' or 'quit' to end the session.\n")
 
 conversation_history = []
@@ -30,7 +30,7 @@ while True:
             temperature=0.7
         )
         answer = response.choices[0].message.content.strip()
-        print(f"ChatGPT: {answer}\n")
+        print(f"Cloud: {answer}\n")
 
         conversation_history.append({"role": "assistant", "content": answer})
 

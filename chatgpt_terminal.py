@@ -2,7 +2,7 @@
 import os
 from openai import OpenAI
 
-# Make sure your API key is set
+# Make sure your API key is sets
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
     print("Error: OPENAI_API_KEY not set.")

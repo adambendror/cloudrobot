@@ -20,7 +20,8 @@ embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 vectordb = Chroma.from_texts(
     texts=texts,
     embedding=embeddings,
-    persist_directory=CHROMA_DIR
+    persist_directory=CHROMA_DIR,
+    collection_name="weather_data"  # Explicitly name the collection
 )
 
 vectordb.persist()

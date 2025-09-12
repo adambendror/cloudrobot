@@ -2,7 +2,6 @@
 import os
 from openai import OpenAI
 import chromadb
-from chromadb.config import Settings
 
 # Make sure your API key is set
 api_key = os.getenv("OPENAI_API_KEY")
@@ -13,10 +12,7 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 # Initialize Chroma client and load the database
-chroma_client = chromadb.Client(Settings(
-    persist_directory="/chroma_db",  # Path to your Chroma database
-    chroma_db_impl="duckdb+parquet"
-))
+chroma_client = chromadb.Client(persist_directory="/chroma_db")  # Updated initialization
 collection = chroma_client.get_collection("weather_data")  # Replace with your collection name
 
 print("=== Cloud Terminal ===")

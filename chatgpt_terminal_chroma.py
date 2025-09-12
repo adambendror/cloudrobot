@@ -21,6 +21,18 @@ CHROMA_DIR = "chroma_db"
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 vectordb = Chroma(persist_directory=CHROMA_DIR, embedding_function=embeddings)
 
+# Inspect ChromaDB contents
+try:
+    all_docs = vectordb.similarity_search("", k=10)  # Retrieve up to 10 documents
+    print("\n=== ChromaDB Contents ===")
+    if all_docs:
+        for i, doc in enumerate(all_docs):
+            print(f"Document {i + 1}: {doc.page_content}\n")
+    else:
+        print("ChromaDB is empty. No documents found.\n")
+except Exception as e:
+    print(f"Error inspecting ChromaDB: {e}")
+
 print("=== Cloud Terminal ===")
 print("Type 'exit' or 'quit' to end the session.\n")
 

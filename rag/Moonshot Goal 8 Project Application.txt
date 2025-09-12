@@ -1,0 +1,192 @@
+R&D project Application
+PD’s supplement (Moonshot Goal 8)
+We plan to hold a call for proposals for additional PMs to “Primarily aiming to control heavy rainfall (including linear precipitation zones) and strong winds.”, which is lacking in the current program portfolio.
+1.Moonshot Goals
+Global warming means that wind and flood damage caused by extreme
+weather events such as typhoons and torrential rains are becoming more severe and frequent. If it is possible to change the intensity, timing, and/or location of extreme weather events that lead to disasters, it may be possible to avoid or dramatically reduce the resulting damage.
+The Moonshot Goal 8 program aims for the realization of a society safe from the threat of extreme winds and rains by controlling and modifying the weather by 2050.
+To achieve this goal, this program conducts R&D aimed at: gaining a deeper understanding of extreme weather, which is essential for the development of weather control theory; improving weather forecasting technology such as weather modeling, data assimilation and ensemble methods; and realizing weather control technology that is socially, technically, and economically feasible. For more information, please refer to the "PD’s Supplements to the FY2021 PM application" at the end of this policy.
+2. Direction of research and development (1)Area and field to promote challenging R&D
+This R&D program focuses on extreme winds and rains, the weather that poses the greatest threats to Japan, ranging from typhoons to localized torrential rains and strong winds, and conducts research and development to address them.
+The program portfolio consists of two types of R&D projects: “Core Research,” which is pursued based on an overall scenario developed by
+ PD:MIYOSHI Takemasa(Team Leader, Center for Computational Science, Data Assimilation Research Team, RIKEN)
+  1
+
+backcasting from a vision of society in 2050, and “Feasibility Studies,” which boldly explore specific ideas, but for which it is difficult to depict an overall scenario at this stage. Each R&D project pursues its own research and development while also engaging in cooperation and collaboration with the other projects, aiming to achieve the program goal of controlling the weather.
+Fig.1 Portfolio of this R&D program
+(2)Current Initiatives
+This R&D program consists of three Core Research projects and five
+Feasibility Studies which are conducting research and development while dividing roles as described on the previous page.
+In order to achieve the goal of controlling the weather by 2050, it will be necessary to conduct weather control experiments in the 2030s to the 2040s to verify effectiveness and safety while gradually scaling them up. In doing so, not only must the experiments be scientifically and technologically feasible, ELSI (ethical, legal, and social issues) issues, including the formulation of rules for operations and social consensus for each period and experimental scale, must also be resolved. And in the period from now until 2030, the most crucial factor will be to first prove the theoretical feasibility of weather control in weather simulations. After that, we will begin full-scale development of manipulation methods, and by 2030, we will demonstrate that weather control is feasible from an engineering perspective as well by
+ 2
+
+conducting small-scale outdoor experiments after taking ELSI issues into account.
+ Fig. 2 Overall plan for this R&D program
+Among the Core Research projects, two of the PMs, Dr. SAWADA Yohei and Dr. FUDEYASU Hironori, focus primarily on R&D related to typhoons. The third PM, Dr. YAMAGUCHI Kosei, focuses mainly on urban torrential rains and linear and convective-type torrential rains. Based on the overall program plan described above, the key R&D efforts being carried out by each PM in the first five years of the projects are as follows.
+●SAWADA Yohei PM
+Theoretically demonstrate that it is possible to control typhoons with an amount of energy that humans can handle, and develop technology for selection of meteorological fields that can be agreed upon by society. ●FUDEYASU Hironori PM
+Improve numerical models and run control simulations while envisioning typhoon intervention methods such as cloud seeding and ships that provide wind resistance, and clarify the potential for weather control. ●YAMAGUCHI Kosei PM
+In addition to clarifying the relationship of airflow vortexes originating in cities with the mechanism that creates torrential rains, develop technology
+3
+
+to control heavy rainfall by altering the surrounding air and water vapor flow.
+In addition, as project-wide activities, we are proactively engaged in efforts to identify and resolve ELSI issues and to sophisticate weather simulation technologies and weather control theory from a mathematical science approach, among others.
+(3)Direction of research and development for realization of the Goals
+This R&D program aims to resolve the threat of extreme winds and rains by 2050, but we believe this goal will be difficult to achieve by only developing the science and technologies we have today, and will require many breakthroughs. We therefore believe that adopting a broad range of ideas and approaches to control the extreme weather events that cause extreme winds and rains, conducting R&D on various kinds of weather using diverse methodology, and mustering our results and know-how will
+maximize our chances of achieving our goal.
+However, when looking at the actual state of this R&D program, it lacks
+research and development on comparatively small-scale weather phenomena such as linear precipitation zones and localized heavy rainfall, as well as extreme weather events specific to mid- to high latitudes, and we must expand the scope of our program even further in order to resolve the threat of extreme weather in general in 2050. In addition, there are various causes and forms of heavy rainfall and strong winds, and we do not believe that the current types of efforts are enough.
+This additional call for applications from the Core Research PMs is one of the measures we are taking to address these challenges.
+3.R&D themes and their requirements in the application (1)R&D themes
+Primarily aiming to control heavy rainfall (including linear precipitation zones) and strong winds.
+※If your R&D is mainly focused on heavy rainfall and strong winds, it can also include large-scale weather events such as typhoons.
+(2)R&D Type
+ 4
+
+Core Research
+※This application does not call for Feasibility Study
+(3)Overall application policy
+You should consider both “forecasting” thought, which predicts the future
+from present society and technology, and “back-casting” thought, which works backwards, using society in 2050 as the starting point, and thinks about what we should do now; please propose a scenario for 2050 and scenarios/R&D for the tenth year (2031), fifth year (2026), and third year (2024) from the start of the Moonshot Goal 8. The content of your proposed scenarios should contain links to the achievement of the Goal in 2050 and challenging and innovative areas, consider ethical, legal, and social issues (ELSI), and include a current analysis and rationale for how they will be implemented and applied in society.
+(4)Application Requirements 1R&D project
+It is both important and necessary to undertake R&D that balances four R&D elements: (a) a meteorological approach, (b) an engineering approach, (c) ELSI research, and (d) mathematical science studies, to achieve the Goal. Therefore, when submitting your application, it must address one or both of (a) a meteorological approach and (b) an engineering approach. Moreover, (c) ELSI research must also be included in the application. In addition, as described in the following section 3. (5), “R&D milestones,” starting from fiscal year 2025, all four R&D elements will need to be addressed.
+Your project may be subject to substantial revisions during the elaboration carried out after adoption.
+a) Meteorological approach
+R&D that works to achieve the Goal from the perspective of what kind of weather manipulation is effective for weather control (the following are examples of R&D that comprehensively tackle this)
+I. Exploring the relationship between manipulation and weather modification using weather simulations
+II. Exploring manipulation technology and techniques that could potentially cause the target weather modification
+5
+
+III. Making weather models and data assimilation more sophisticated and carrying out observations, which are the minimum requirements for weather control
+IV. Estimating the effects that will occur when the hypothesized weather modification is carried out (including economic aspects)
+b) Engineering approach
+R&D that works to achieve the Goal from the perspective of which manipulation methods are actually feasible (the following are examples of R&D that comprehensively tackle this)
+I. Identifying manipulations that will cause disturbances and confirming their feasibility through experiments
+II. Confirming effectiveness through simulations of weather modification using manipulations
+c) Mathematical science studies
+Mathematical science studies that can contribute to the achievement of this Goal.
+(Expected subjects and keywords: nonlinear dynamical systems theory/complex systems, control theories (optimal control theory, chaos control, etc.), uncertainty quantification (probability analysis, statistical analysis), data science, numerical analysis, mathematical modeling, discrete mathematics, algebra (representation theory, computational algebraic statistics, etc.), geometry (optimal transport, topographical data analysis, etc.), and mathematical analysis (nonlinear partial differential equations, etc.))
+d) ELSI research
+R&D connected to ethical, legal and social issues that should be resolved in order to carry out weather control experiments and social implementation. We expect wide-ranging R&D, from issues connected with weather control itself to issues concerning specific phenomenon or technology, etc.
+I. Ethical issues such as how far weather manipulation should go
+II. Legal issues such as building consensus in Japan and overseas and
+creating rules
+III. Social issues such as social acceptance and the presentation of
+solution strategies
+6
+
+2The periods to implement R&D projects
+In principle, four fiscal years (until FY2026).
+3Monetary amount for R&D projects (Direct cost)
+The maximum amount of R&D funds (direct cost) over the first two years
+(until FY2024) is a total of 300 million yen in the case of R&D that focuses on both a meteorological approach and an engineering approach, and a total of 150 million yen in the case of R&D that focuses on one approach. Whichever approach is focused on, conducting ELSI research is also mandatory from the time of application.
+For the following two years (FY2025 and FY2026), taking both approaches will be mandatory as described in the following section 3. (5), “R&D milestones,” and as the development of manipulation methods will be fully under way, in each case, the maximum amount of R&D funds for the 2 years in question is a total of 600 million yen.
+Please include a rough estimate of the cost required to supplement your R&D, including R&D that fulfills 3. (5) below, in your proposed R&D funds. We do not mind if your proposal costs substantially less than this.
+(5)R&D milestones
+Weather control R&D is not being implemented worldwide, as was noted
+above, so we anticipate cases in which it will be difficult to optimize and bring all four R&D elements together at the very start of the R&D; this includes interdisciplinary fusion and securing appropriate participants in the research. We also expect that the required R&D will change greatly as progress is made. Therefore, after FY2025, in principle we will only implement streamlined R&D projects that encompass the R&D elements of a meteorological approach, an engineering approach, ELSI research, and mathematical science studies, and we will promote R&D in a manner which aligns with the R&D that is needed up until that point.
+More specifically, in addition to milestones set individually for each R&D project, projects will also need to achieve the following common milestones a) and b) in each year until the last of FY2024.
+a) FY2023: Researchers present the direction for mathematical science studies to make weather control more sophisticated.
+b) FY2024: Research teams who use both meteorological and engineering
+7
+
+approaches and necessary mathematical science studies/ELSI research teams or R&D groups that include all experts will be formed.
+(Reference)
+・Moonshot Goal 8 Website
+https://www.jst.go.jp/moonshot/program/goal8
+・Moonshot Goal 8 Kickoff Symposium (June 6, 2022)
+https://www.jst.go.jp/moonshot/sympo/20220616
+  8
+
+(Reference) 2021FY [Moonshot Goal 8] PD's Supplements
+1. Policy for Selection and Proposal content
+(1) Thoughts about R&D for weather control
+When it comes to weather control, relatively small-scale research on encouraging and suppressing precipitation is being carried out across the world, but there are a lot of unexplored areas regarding the control of storms, including typhoons. In this context, the important point is to approach this from two sides: the meteorological aspects, i.e. what kind of weather manipulation is effective for weather control, and the engineering aspects, i.e. which kind of manipulation methods are feasible in practice, and to explore a wide range of possibilities while matching and integrating both sides at the appropriate time. When undertaking R&D, making the weather models and data assimilation needed for weather control more sophisticated will be the key point that will realize this Goal; I believe that incorporating new mathematical concepts will be one effective solution strategy for this issue.
+The ultimate application we aim for is to achieve new disaster prevention and reduction integrated with human activities. We assume the scope of weather control will be limited, and at this stage both possible weather control and human activities (evacuation, etc.) will be optimized and put to use. As we work toward this, it is important we aim for comprehensive solutions with an eye to a changing future, including constantly exploring and organizing issues such as ELSI (ethical, legal, and social issues) that will change with the development of R&D and transformation of society and the environment, etc., and reflect the content and direction of R&D as necessary. In addition, we must gain the understanding of citizens and society by sharing the outcomes of this R&D with the general public, and establish a consensus in the world of academia through close information exchanges between researchers and research communities around the world.
+ PD:MIYOSHI Takemasa(Team Leader, Center for Computational Science, Data Assimilation Research Team, RIKEN)
+9
+
+(2) R&D implementation policies
+We will implement R&D management that oversees the Goal as a whole, from the perspective of bringing together optimal R&D and building a system, while maximizing the scope of the possibility of achieving this Goal. As it is particularly necessary to uncover the potential of the widest possible range of solutions, the aim is to realize this goal by mustering results and know-how while adopting a variety of ideas and approaches. To accomplish this, when we launch this Goal, we will call for and adopt “core research,” which will be carried out after depicting an overall scenario obtained by back-casting from a vision of society in 2050, and “feasibility studies,” which will boldly explore specific ideas, etc. During the R&D period, researchers will carry out comprehensive R&D that works toward fulfilling this Goal, while aiming for moderate competition and flexible collaborations and fusions with other projects.
+More specifically, it is both important and necessary to undertake R&D that balances four R&D elements: (i) a meteorological approach, (ii) an engineering approach, (iii) ELSI research, and (iv) mathematical science studies, to achieve the Goal. However, weather control R&D is not being implemented worldwide, as was noted above, so we anticipate cases in which it will be difficult to optimize and bring all four R&D elements together at the very start of the R&D; this includes interdisciplinary fusion and securing appropriate participants in the research. We also expect that the required R&D will change greatly as progress is made. Therefore, core research that definitely includes (i) or (ii) above and feasibility studies that include at least one of (i) to (iv) above will be carried out in parallel to steadily produce research outcomes as we build a system that includes all four R&D elements by the end of the third year. See “1. (4) Proposal content” and “1. (5) R&D milestones” below for specific examples of R&D and formats.
+Indoor experiments on manipulation methods can be carried out as necessary; to undertake outdoor experiments, you are required to establish organizational and resolution methods for any effects (including negative effects), and the PD must judge that the experiment is feasible for the overall Goal from the perspective of ELSI, etc.
+10
+
+(3) Recruitment and selection policies
+Please select one of the two application frameworks below to apply.
+a) Core research
+We are calling for core research in the form of R&D that will be carried out after depicting an overall scenario obtained by back-casting from a vision of society in 2050. If you apply for this framework, you should consider both “forecasting” thought, which predicts the future from present society and technology, and “back-casting” thought, which works backwards, using society in 2050 as the starting point, and thinks about what we should do now; please propose a scenario for 2050 and scenarios/R&D for the third year, fifth year, and tenth year after your adoption as a PM. The content of your proposed scenarios should contain links to the achievement of the Goal in 2050 and challenging and innovative areas, consider ethical, legal, and social issues (ELSI), and include a current analysis and rationale for how they will be implemented and applied in society. In principle, the R&D period should be five years.
+b) Feasibility studies
+We are calling for feasibility studies in the form of R&D for which it is difficult to depict an overall concept because it is a highly original proposal among research that could contribute to the realization of the Goal, and the feasibility of the proposed technology itself in R&D must be judged, or because the scope of the R&D is narrow, etc. If you are applying for this framework, you should first specify what kind of original R&D challenge you are taking on, how much progress you expect compared to existing technology and past research (or if there is nothing with which to compare), and what contributions you anticipate making for weather control, then set a clear achievement target and write your proposal. The R&D period is a maximum of three years, or as long as is needed to achieve the target set.
+After the R&D period, we anticipate that you will develop your R&D to a higher level, perhaps by participating in existing core research using your research outcomes and contributing to the achievement of the Goal, or by forming a new core research group by combining with other feasibility studies, etc., and aiming to achieve the Goal in
+11
+
+this way.
+(4) Proposal content (i)Core research
+a)
+I. II. III.
+IV. b)
+I. II. III.
+To achieve the Goal, we require R&D that focuses on one or both a) and b) below. Even if you apply for core research, you may be adopted for a feasibility study during the selection process, or your project may be subject to substantial revisions during the elaboration carried out after adoption.
+Meteorological approach
+R&D that works to achieve the Goal from the perspective of what kind of weather manipulation is effective for weather control (the following are examples of R&D that comprehensively tackle this)
+Exploring the relationship between manipulation and weather modification using weather simulations
+Exploring manipulation technology and techniques that could potentially cause the target weather modification
+Making weather models and data assimilation more sophisticated and carrying out observations, which are the minimum requirements for weather control
+Estimating the effects that will occur when the hypothesized weather modification is carried out (including economic aspects)
+Engineering approach
+R&D that works to achieve the Goal from the perspective of which manipulation methods are actually feasible (the following are examples of R&D that comprehensively tackle this)
+Identifying manipulations that will cause disturbances and confirming their feasibility through experiments
+Confirming effectiveness through simulations of weather modification using manipulations
+Calculating the necessary funds, etc. for these manipulations, etc.
+(ii)Feasibility studies
+We require feasibility studies that focus on at least one of the following and can contribute to the achievement of the Goal. Your
+12
+
+project may be subject to substantial revisions during the elaboration carried out after adoption.
+a)
+b)
+Research carried out based on a meteorological approach
+R&D that considers what kind of weather manipulation is effective for weather control. See the individual R&D suggestions in “1. (4) (i) a) Meteorological approach” above for more specific examples. Research carried out based on an engineering approach
+R&D that considers what kind of manipulation methods are actually feasible. See the individual R&D suggestions in “1. (4) (i) b) Engineering approach” above for more specific examples. We anticipate original ideas for causing disturbances (including those that will bring small changes to the state of the atmosphere, which, in combination with different methods, demonstrate a major effect).
+Mathematical science studies
+Mathematical science studies that can contribute to the achievement of this Goal.
+(Expected subjects and keywords: nonlinear dynamical systems theory/complex systems, control theories (optimal control theory, chaos control, etc.), uncertainty quantification (probability analysis, statistical analysis), data science, numerical analysis, mathematical modeling, discrete mathematics, algebra (representation theory, computational algebraic statistics, etc.), geometry (optimal transport, topographical data analysis, etc.), and mathematical analysis (nonlinear partial differential equations, etc.)
+ELSI research
+R&D connected to ethical, legal and social issues that should be resolved in order to carry out weather control experiments and social implementation. We expect wide-ranging R&D, from issues connected with weather control itself to issues concerning specific phenomenon or technology, etc.
+Ethical issues such as how far weather manipulation should go
+Legal issues such as building consensus in Japan and overseas and creating rules
+c)
+d)
+I. II.
+13
+
+III. Social issues such as social acceptance and the presentation of solution strategies
+(iii)Research funds (direct cost)
+For core research, the maximum amount of R&D funds (direct cost) over the first three years is a total of 600 million yen in the case of R&D that focuses on both a meteorological approach and an engineering approach, and a total of 300 million yen in the case of R&D that focuses on one approach. As stated in 1. (5) c) below, both approaches must be used in years four and five, and so in either case the R&D funds for these two years come to a maximum total of 600 million yen. Please include a rough estimate of the cost required to supplement your R&D, including R&D that fulfills 1. (5) below, in your proposed R&D funds.
+For feasibility studies, the approximate R&D funds (direct cost) over an R&D period of up to three years will be within a total of 50 million yen.
+In the case of both core research and feasibility studies, we do not mind if your proposal costs substantially less than this.
+(5)
+R&D milestones
+From the fourth year onwards, in principle, only optimized R&D projects that include all the elements ((i) a meteorological approach, (ii) an engineering approach, (iii) ELSI research, and (iv) mathematical science studies) will move forward. Therefore, in addition to milestones set individually for each R&D project, projects (especially core research) will also need to achieve the following common milestones a), b), and c) during each of the first three years. When it comes to the search for and participation of appropriate teams and experts, we expect researchers to use a variety of methods, such as a fusion of multiple core research or an open call (made after the required R&D items have been presented), in addition to inviting people who are not participating in the project or feasibility study team initiatives.
+a) First year: By the end of the first year, researchers should detail
+the requirements for studies to help resolve ELSI, and teams
+14
+
+and/or experts will participate to carry out the necessary ELSI
+research during the research period.
+b) Second year: Researchers present the direction for mathematical
+science studies to make weather models more sophisticated.
+c) Third year: By the end of the third year, research teams who use both meteorological and engineering approaches and necessary mathematical science studies/ELSI research teams or R&D
+groups that include all experts will be formed.
+2. Policy for promoting R&D
+(1) Portfolio management
+Taking into account the relationship between multiple R&D projects, portfolio management requires collaboration and competition between PMs. Therefore, during the period of elaboration following your adoption as a PM, the proposed scenario shall be revised and implemented as appropriate in consultation with the PD regarding clarification of the scenarios and milestones that you aim to fulfil in the third, fifth, and tenth years after your adoption and a review of the rational implementation plan and budget plan for this. In addition, it will be possible to take on a different research approach with the agreement of the PD during the implementation period.
+(2) Industry-academia-government collaboration
+We expect the progress of the R&D to have a ripple effect, developing applications and yielding results that can contribute to various industries, rather than just fostering research outcomes to achieve the 2050 Goal. Consequently, we require researchers to engage in proactive activities that allow private companies, governmental organizations, and other cooperative organizations to participate in the project.
+(3) International collaboration
+To realize weather control, we expect researchers to constantly grasp R&D trends in Japan as well as overseas, and, if necessary, to carry out R&D while actively collaborating with foreign institutions. In addition, we require researchers to engage in proactive activities that will allow
+15
+
+international understanding and cooperation for each project to enable results application.
+16

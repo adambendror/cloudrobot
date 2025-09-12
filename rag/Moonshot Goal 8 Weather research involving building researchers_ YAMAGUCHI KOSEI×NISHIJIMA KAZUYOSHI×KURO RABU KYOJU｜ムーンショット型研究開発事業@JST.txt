@@ -1,0 +1,158 @@
+ Weather research involving building researchers: YAMAGUCHI KOSEI×NISHIJIMA KAZUYOSHI×KURO RABU KYOJU
+ムーンショット型研究開発事業@JST
+ムーンショット型研究開発事業@JST
+2024年4月8日 19:00
+
+Short, localized outbreaks of torrential rain are sometimes called “guerrilla heavy rain” in Japanese. This is not an official meteorological term, but it aptly describes the sudden and unpredictable nature of such downpours. Guerrilla heavy rains are becoming more common in recent years, sometimes causing flash flooding and human casualties.
+Project Manager (PM) Yamaguchi Kosei is leading a project called Heavy Rainfall Control for Living Together with Isolated-Convective Rainstorms and Line-Shaped Rainbands, working with Dr. Nishijima Kazuyoshi and a team of researchers. They are researching and developing weather control technologies to weaken the intensity of guerrilla heavy rain, based on the mechanisms of how such heavy rain is formed. These technologies are expected to reduce harm, but raise difficult questions about whether it is acceptable for humans to change the weather. Science communicator Kuro Rabu Kyoju talks to Dr. Yamaguchi and Dr. Nishijima about this research project.
+
+《Click here for an article about wind measurement using a wind tunnel and a miniature model town, and the challenges of real-world implementation》
+画像
+YAMAGUCHI Kosei：Associate Professor, Research Division of Atmospheric and Hydrospheric Disasters, Disaster Prevention Research Institute (DPRI), Kyoto University. Ph.D. (Engineering) from Kyoto University Graduate School of Engineering, 2009. Formerly special researcher at Center for the Promotion of Interdisciplinary Education and Research, Kyoto University, and special assistant professor at DPRI, Kyoto University, before taking up his current position in 2016. Specializes in hydrometeorology, focusing on the formation process of rain clouds that cause torrential rain. His motto is “experience nature first-hand to hone your imagination and creativity”.
+画像
+NISHIJIMA Kazuyoshi：Associate Professor, Research Division of Atmospheric and Hydrospheric Disasters, Disaster Prevention Research Institute (DPRI), Kyoto University. Doctor of Sciences, ETH Zurich (Switzerland), 2009. Formerly senior assistant at ETH Zurich (Switzerland) and associate professor at Technical University of Denmark before moving to his current position in 2013. Adjunct associate professor at the University of Waterloo, Canada, from 2017 to 2023. Specializes in wind engineering and risk engineering, focusing on wind-related disaster reduction. Loves old folk houses and spends his weekends at a folk house in the Tango area.
+画像
+KURO RABU Kyoju：University teacher, comedian, Science Communicator Certified by National Museum of Nature and Science, visiting researcher at the University of Tokyo Interfaculty Initiative in Information Studies. Part-time lecturer at several universities. As well as researching and teaching science and engineering, he also performs live comedy shows about science topics. As a science communication practitioner and researcher, he supports events like Science Agora and Science Koshien, and gives PR advice for research projects. His aim is to communicate science in an accurate and entertaining way, to increase the number of people studying science.
+目次
+
+Predicting guerrilla heavy rain is a lot more difficult than everyday weather forecasting
+
+Kuro Rabu: These days, weather forecasts achieve over 80% accuracy. Some people might wonder if there is anything left to research when it comes to the weather. Are there any issues challenging enough for the Moonshot Research & Development Program?
+
+Yamaguchi: It’s true that the accuracy of weather forecasts is steadily improving all the time. But for the type of heavy rains that cause natural disasters, we cannot yet make accurate enough predictions to fulfil society’s requirements. We need to further clarify the mechanisms of heavy rain to improve prediction accuracy.
+
+Kuro Rabu: If guerrilla heavy rain could be predicted sooner and more accurately, it might be possible to take some kind of action. So, do you simulate the weather using supercomputers?
+
+Yamaguchi: That’s right. We have been conducting research using simulation technology and monitoring technology to improve prediction, but rather than simply making predictions, we are working on new methods of actually controlling the growth of cumulonimbus clouds that cause guerrilla heavy rain and line-shaped rainbands, to weaken the heavy rain.
+Kuro Rabu: Wow! That sounds like a real challenge! Why did you decide to tackle this area of research?
+
+Yamaguchi: At my laboratory, we have been researching the process of how rainclouds form for almost ten years now. From this video, we now understand the mechanism of how heavy rains are formed.
+
+Simulation showing the mechanism of how guerrilla heavy rain is formed. Kobe city was divided into a grid of 60-metre squares, and the situation around 1 hour to 30 minutes before the guerrilla heavy rain was calculated, taking heat from sources like factories into account (provided by PM Yamaguchi)
+
+Kuro Rabu: What are the purple spikes?
+
+Yamaguchi: This indicates that air is spinning in a vortex. We think of this as the seed of heavy rain. Radar observation research has also shown that heavy rain develops when there is a strong vortex.
+
+Kuro Rabu: Does that mean it’s raining here?
+
+Yamaguchi: It’s going to rain.
+
+Kuro Rabu: You can tell when it’s just about to rain! That’s amazing!
+
+Yamaguchi: If you look closely, you will find that these vortices occur at certain points on the surface of the Earth. These are actually places that generate heat, like factories and commercial facilities. That’s because when there is something warm close to the Earth’s surface, it generates buoyancy. In our simulations, we calculate the heat coming from individual buildings and the shape of relatively large buildings.
+画像
+
+Kuro Rabu: Really? You can calculate it in that much detail?
+
+Yamaguchi: The simulations used by the Japan Meteorological Agency for weather forecasting divide the atmosphere into a grid of 2-km squares, but for our calculations, we use a 30-metre grid, although the target area is limited for research purposes. With that level of detail, the impact of buildings can easily be assessed.
+
+Kuro Rabu: It must be hard work to make it so detailed. How long did it take?
+
+Yamaguchi: It has taken almost five years, including the development of the mathematical model.
+
+Kuro Rabu: What a huge task! I get it now. Predicting guerrilla heavy rain is a lot more difficult than everyday weather forecasting.
+画像
+
+Yamaguchi: Weather forecasting is mainly based on the laws of physics. When you throw a ball, where it lands and its trajectory will depend on the initial speed and angle, which can be predicted from the laws of physics. Weather, too, is predicted based on the laws of physics, with observation data as a starting point. On a large scale, weather is controlled by large-scale factors such as high pressure and low pressure, so it can be predicted with rough observations, but to predict small-scale events like guerrilla heavy rain requires detailed observation data.
+However, observation data from a 30-m grid does not actually exist. So we had to start by thinking about what data to use in our calculations. Plus, weather phenomena are chaotic (*1) in nature, so even a slight discrepancy in the initial data can produce a huge difference in the results. That’s what makes simulation so difficult.
+
+Kuro Rabu: So that’s why it has taken five years. But without proper simulation, if you intervene to control the weather, you won’t know whether it has made any difference or not, right?
+
+Yamaguchi: Yes. That’s what previous researchers have struggled with the most when attempting to change the weather.
+
+Kuro Rabu: I see. That means now is the perfect chance, now that detailed simulation has become more accurate!
+
+Yamaguchi: This simulation proved that human activities sometimes affect how the seeds of heavy rains are formed, so I realized that controlling the impact of human activities might stop heavy rains from happening. And I believe that if human activities are accelerating natural disasters due to heavy rains, then we as humans need to remedy the present situation ourselves. That’s what motivated me to apply to the Moonshot program.
+Would it work to control heavy rain at the seed stage?
+
+Kuro Rabu: Is Kobe prone to guerrilla heavy rain?
+
+Yamaguchi: Warm, humid air comes in from Osaka Bay to the south of Kobe, and rises when it hits the Rokko mountain range, which often causes cumulonimbus clouds to form. The effect of human activities in the city generates vortices and heat, further promoting cloud development.
+
+Kuro Rabu: If we were to artificially control guerrilla heavy rain, does that mean somehow stopping these vortices from rising?
+
+Yamaguchi: That’s right. One of the goals of this project is to control vortices while they are still small, a few hundred metres high, because they become harder to control when they get bigger.
+
+Kuro Rabu: No way! Actually, it’s the same for stand-up comedy. If one joke bombs, it’s hard to recover (laughs). If it happens two or three times, you’ll never salvage the set! How you deal with it at an early stage – that’s what’s important.
+画像
+
+Yamaguchi: With heavy rain, if we could manipulate it immediately before it starts, it would certainly be effective, but it would require a lot of energy by the time it reaches that stage. That’s why we’re trying to change the future by manipulating heavy rain from the very first seed stage, using less energy.
+But sometimes manipulating rainclouds can have the opposite effect, causing rapid growth, so it is difficult. Just like comedy, you don’t always know which way it’s going to go until you try it.
+
+Kuro Rabu: So that’s why simulation is so important.
+画像
+Control technologies that PM Yamaguchi’s project aims to develop. The goal is to suppress the frequency and intensity of heavy rain by manipulating the growth of the seeds of heavy rain at as early a stage as possible (provided by PM Yamaguchi)
+
+Yamaguchi: Yes. Recently, we have been getting simulation results indicating that applying a certain amount of energy at the stage after the initial seed could change the subsequent process, so these results are encouraging. In this simulation, large wind turbines were placed at the point where the wind enters, making it harder for the wind to get through.
+In fact, for clouds to form, updrafts are required. Updrafts are generated by heat and wind. An important point is that we separated these two elements and focused on wind.
+
+Simulation of guerrilla heavy rain that hit Kobe in July 2008.
+The light blue columns represent the 3D distribution of rainwater volume. The image on the left is with no human intervention. The image on the right is when two 200-metre wind turbines are placed in the area marked in blue. The peak rainfall amount on the right is 27% lower than that on the left. Five people lost their lives when the Toga River, a urban river, in Kobe rose rapidly due to this heavy rain. (Provided by PM Yamaguchi)
+
+Kuro Rabu: What a great result! So… hmm? Do the wind turbines create wind in the opposite direction?
+
+Yamaguchi: Wind turbines catch the wind and convert it to energy – they don’t produce wind. A device that blows air is called a ventilation fan.
+
+Kuro Rabu: Oh, yes! By rotating, a wind turbine weakens the wind. I think this simulation must be a world first. How much is the rain weakened by placing wind turbines?
+
+Yamaguchi: In terms of intensity, it makes it about 27% weaker.
+
+Kuro Rabu: Oh. Is 27% enough?
+画像
+
+Yamaguchi: That’s a really important question. Our simulations have shown that it’s possible, but whether it will work in the real world is another matter. Maybe 27% will not be enough to reduce disasters, or maybe it would be meaningful to shift the position of heavy rain, even with less reduction in intensity. It’s a question of “needs and seeds”.
+A powerful tag-team of rain researchers and wind researchers
+
+Kuro Rabu: There’s something I’d like to ask. Is it feasible to create a wind turbine with the power assumed in this simulation?
+
+Nishijima: From Dr. Yamaguchi’s simulation, we know how much energy the wind turbine would need to absorb to control the formation of rainclouds, so we need to consider whether it is possible to make such a device from an engineering perspective. To stop heavy rain once the seed has grown would require huge amounts of energy to be absorbed, which would involve bigger equipment and issues about locating it in a city. We will perform simulations with various conditions, taking industry opinions on board.
+画像
+
+Kuro Rabu: But a 200-metre wind turbine… isn’t that just too big? (laughs)
+
+Nishijima: It’s not just pie in the sky – it really exists.
+
+Kuro Rabu: What! In Kobe?
+
+Nishijima: Not in Kobe, but there are wind turbines of that size used for wind power generation.
+
+Kuro Rabu: Oh, yes. Wind turbines are normally used to generate power. That makes sense. But in that case, it’s an issue of where to locate wind turbines, isn’t it. I guess it must be hard to move them.
+
+Yamaguchi: We can narrow down the locations where upward currents occur, to some extent. We call these locations “hot spots”. By adjusting the position of wind turbines near these hot spots, I think it could be possible.
+
+Kuro Rabu: I see! It’s starting to sound like a real possibility.
+
+Yamaguchi: We are also exploring a few other methods besides wind turbines.
+画像
+Heavy rain control methods being examined by PM Yamaguchi’s project. This illustration shows an array of wind turbines each about 20 metres in size, making a total width of approximately 250 metres. Ventilation fans are placed on top of tall buildings to mitigate the upward current, as buildings are a heat source (provided by PM Yamaguchi)
+
+Yamaguchi: An offshore curtain is a way of stopping the wind by suspending a 1-km-square curtain in the sky. It’s set up on the boats, so can be moved.
+
+Kuro Rabu: It’s a bit like a kite, isn’t it! (laughs) It seems like kind of a simple method, but could it really stop the wind?
+
+Yamaguchi: It is not actually necessary to stop the wind completely. We believe it could be meaningful to use a mesh curtain that lets half of the air through, for example.
+
+Kuro Rabu: I guess various technical developments would be necessary.
+画像
+
+Nishijima: It would require the technology to create a huge membrane, and technology to suspend the curtain in the sky, but if these technologies can be developed, they could be used for other applications, aside from controlling the weather.
+
+Kuro Rabu: What is cloud seeding?
+
+Yamaguchi: Originally, it was a technique to artificially enhance rainfall, in other words to make it rain, by dispersing substances into the air that act as cloud condensation nuclei.
+
+Kuro Rabu: Is it actually possible to make it rain? I heard that it was attempted in the past, but it didn’t work.
+
+Yamaguchi: Many studies have shown that it is theoretically possible to make it rain. As part of our project, we are working on methods to reduce the total amount of rain by temporarily intensifying rainfall, or spatially dispersing areas of heavy rain.
+But it’s difficult to verify the effects. Changing the process of how cloud particles are formed comes within the field of cloud physics. This process involves various interconnected phenomena, making it highly chaotic and extremely difficult to study. That’s why we are focusing on ways of changing the wind, as I talked about, not just cloud seeding.
+
+Kuro Rabu: I see! You are experts in wind, is that right?
+
+Nishijima: My specialized area is wind in building engineering, while Dr. Yamaguchi specializes in rain. Although our laboratories are next door to each other, we had never talked about our research before, because we were focusing on different things: wind and rain. I was surprised when Dr. Yamaguchi invited me to take part in the Moonshot project, but he explained that buildings can cause vortices that lead to heavy rain.
+I have always researched the effect of the wind on buildings, so I found it new and interesting to think about it from the reverse perspective – how buildings affect wind. That’s why I joined the project. I think this joint research with Dr. Yamaguchi has been made possible by Kyoto University’s Disaster Prevention Research Institute (DPRI) functioning effectively as a hub for researchers in different areas.
+
+    *1 : Chaos is the property of a system whereby a slight difference in initial values can significantly change future results in either direction, positive or negative, making it extremely difficult to predict.
+
+Written by Aoyama Seiko
+Photos by Oshima Takuya

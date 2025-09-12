@@ -1,0 +1,320 @@
+ [Moonshot Goal 8]
+R&D Concept of “Realization of a society safe from the threat of extreme winds and rains by controlling and modifying the weather by 2050.”
+November 2021 Ministry of Education, Culture, Sports, Science and Technology (MEXT)
+1.Moonshot Goals
+Within the Moonshot Goals (decided on September 28th, 2021, by Plenary
+session of Council for Science, Technology and Innovation), the Ministry of Education, Culture, Sports, Science and Technology (“MEXT”), with Japan Science and Technology Agency (“JST”) as a research and development promotion agency, will undertake research and development activities for achieving of the following Goal.
+<Moonshot Goal>
+“Realization of a society safe from the threat of extreme winds and rains by controlling and modifying the weather by 2050.”
+• Making it possible to intervene to change the timing, range and intensity of typhoons and extreme rains (including those that occur in linear precipitation zones), significantly reducing disaster damage and bringing a wide range of benefits to society by 2050.
+• Demonstration on a computer that it is possible to reduce disaster damage by controlling typhoons and extreme rains using realistic intervention operations, and conduct experiments to verify these operations by 2030.
+2.Direction of research and development
+Based on the outcomes of the Moonshot R&D MILLENNIA Program, direction
+of research and development at present is shown as follows. (1) Area and field to promote challenging R&D
+Provisional translation
+   1
+
+As global warming advances, and wind and flood damage caused by extreme weather such as storms (including typhoons) increases and becomes more severe, it is important that we prevent and reduce disasters through tangible and intangible initiatives, such as building and renewing infrastructure and making use of prediction information, so we can substantially curtail the social and economic damage that accompanies disasters, and realize a safe and rich way of life. Meanwhile, if we can also modify the intensity, timing, and range of the extreme weather that leads to disasters, it may be possible to avoid direct damage and/or and greatly reduce damage.
+R&D related to the weather has moved forward at a steady pace. In the distant past, the aim of this research was application in industry, starting with the farming industry, and now in modern times our goal is to prevent and reduce disasters. Our major research subjects are the construction of weather control theories (there are many unexplored areas around the world relating to these in particular) in collaboration with weather research that will steadily develop and become more advanced in the future, and the development of techniques and technology for control in accordance with this. As is shown in Figure 1, to accomplish this, we need to construct control theories, to carry out R&D that aims to improve the accuracy of our predictions and to develop control techniques/technology that incorporate social, technical, and economic factors.
+Additionally, as it is possible that weather control could lead to effects on the economy and society, changes in water resource distribution, and unforeseen damage, we must also respond to ethical, legal, and social issues (ELSI), such as the necessity of domestic or international consensus-building in advance when carrying out application of research results.
+2
+
+ • Control methods that will yield great results from small disturbances, etc.
+Constructing control theories
+Improving the accuracy of predictions
+• Deepening understanding of weather
+• Making weather models more sophisticated
+• Integrating global and local simulations
+• Estimating wide-ranging outcomes and
+effects, etc.
+Developing control technologies/techniques that are socially, technically, and economically feasible
+• Controlling the state of water vapor • Controlling ground-surface/ocean-
+surface temperature
+• Reducing wind energy, etc.
+ELSI
+• Ethical issues
+• Legal issues
+• Social issues, etc.
+   Figure 1: The main fields and areas of R&D needed to realize control over extreme weather such as storms, including typhoons
+(2) Research subject for realization of Moonshot Goal
+The image in Fig.1 is the area and field for challenging R&D to be promoted
+under the Moonshot Research & Development Program. R&D that contribute to the achievement of this Moonshot Goal ”Realization of a society safe from the threat of extreme winds and rains by controlling and modifying the weather by 2050” should proceed. In order to have the most effective and efficient countermeasure, the most cutting- edge scientific trends shall be researched and used for R&D.
+More specifically, it will target extreme weather, such as storms (including typhoons) that lead to disasters, and will focus on improving the accuracy of predictions of this kind of weather, creating control theories that will make it possible to avoid or reduce disasters, and researching and developing the control techniques/technology needed to put these theories into practice.
+When it comes to improving the accuracy of predictions, copious R&D on observations and weather models is being carried out both in Japan and overseas, and so this program will use a foundation of collaboration with existing studies as we advance the R&D necessary to create control theories. In concrete terms, it is necessary to deepen our understanding of the weather, and to enhance weather models while incorporating new mathematical science knowledge in an appropriate manner.
+Control theories is a new research area that connects weather models and control techniques/technologies; even in the MILLENNIA Program, the scope for the pioneering development of theories for which several ideas have been
+3
+
+suggested is huge, and we anticipate participation from a variety of research fields, as well as new developments. It is necessary to carry out R&D on control theories that will create control methods that can produce great results from small disturbances, while actively incorporating this new knowledge.
+Several ideas exist for control techniques and technologies, but at the moment only cloud seeding (dispersing substances that will form the core of raindrops) to create artificial rainfall and snowfall and prevent hail, with a focus on local weather for comparatively short periods of time, has been recognized as practical; researchers do not see this as a realistic manipulation method for controlling extreme weather on a larger scale due to aspects such as the cost and requirements. Therefore, as the social, technological, and economic feasibility of several ideas that could cause disturbances is confirmed, we need R&D that will use weather models to confirm the possibility of controlling extreme weather, which is our aim. We are also looking at combining multiple manipulation methods to achieve weather control, and researchers should focus their research on manipulation methods that could potentially cause wide-ranging disturbances.
+In addition, as was stated in (1), it is vital that researchers consider any effects on the economy and society from controlling extreme weather. Any effects and/or issues that could occur in the case that research outcomes are actually put into practice must be considered in advance from ethical, legal, and social perspectives, as well as from the natural science perspective of effects on atmospheric phenomena. We also need to ensure that the society of the future has a culture that is ready to adopt this technology. This should take place in parallel with theoretical research and technological development, and researchers should consider a system that will foster comprehensive knowledge while bringing these areas together.
+(3) Direction of research and development for realization of the Goals
+To achieve the <targets>, the direction of the R&D, based on (1) and (2), will be as follows.
+<Targets>
+○ By 2030
+・Demonstration on a computer that it is possible to reduce disaster damage
+by controlling typhoons and extreme rains using realistic intervention operations, and conduct experiments to verify these operations by 2030.
+4
+
+○ By 2050
+・Making it possible to intervene to change the timing, range and intensity of
+typhoons and extreme rains (including those that occur in linear precipitation zones), significantly reducing disaster damage and bringing a wide range of benefits to society.
+In order to realize control over increasingly severe storms, including typhoons, we are making weather models more sophisticated and conducting observations. At the same time, we are considering control theories and control techniques and technologies that will lead to weather control via man-made disturbances. In addition, it is necessary to explore manipulation methods that are socially, technologically, and economically feasible and match these with weather control.
+By 2030, we will identify disturbances connected to weather control using computational equipment, starting from studies of the effectiveness of these as control theories using numerical computation. Following this, we will combine the identification of manipulation methods that will cause the necessary disturbances with indoor verification experiments, while starting outdoor experiments on small- scale, local weather phenomena.
+By 2050, we will gradually increase the scale of the outdoor experiments, and establish weather control that substantially reduces damage from extreme wind and rain through control that modifies the intensity, timing, and range of target weather.
+When advancing the above R&D, researchers must have transparent procedures, such as evaluating and clarifying the expected outcomes and all kinds of effects and risks in advance, even those of small-scale outdoor experiments carried out during the R&D, and then hold dialogues with society. When carrying out application of research results in the future, it is also necessary to support the development of legislation and the creation of domestic and international rules. Therefore, surveys and studies should be implemented from the very beginning of the R&D to resolve any ELSI.
+Figure 2 shows the direction of R&D aiming to fulfill this Moonshot Goal by realizing these R&D concepts.
+5
+
+  2022 2030 2050
+Implementation of observations and sophistication of weather models needed for weather control
+    Studies of numerical computational techniques
+Studies on manipulation techniques/ technologies
+Identification of disturbances leading to control
+Identification of
+manipulation techniques Establishment of that can cause necessary control theories disturbances
+ Matching theories and technology
+ Experimental verification (indoors)
+Experimental verification (outdoors)
+Study/adjustments for experiments on target weather
+Experiments on target weather
+Establishment of control techniques/ technologies
+ Study and application of socially acknowledged methods
+ Study/adjustments for outdoor experiments
+Study/adjustments for social implementation
+ Figure 2: The direction of R&D working to realize control of extreme weather such as storms, including typhoons
+To ensure the steady advancement of these, researchers should promote R&D that collates knowledge from a wide range of science and technology fields connected to meteorology, mathematical sciences, and control techniques and technologies. This should include ambitious R&D that will provide a solution to expensive manipulation methods, by simultaneously realizing control of extreme weather and the collection of energy from that weather.
+Researchers should also promote R&D that will incorporate a lot of different knowledge and ideas, and establish a stage-gate process to confirm the potential of these ideas at each step as it fulfills this Goal. Fully-fledged research must be started after social, technical, and economic feasibility has been established, especially that of control techniques and technologies, so researchers should move ahead in stages while confirming the safety of the R&D by carrying out feasibility studies (verification using computation equipment and indoor experiments) rather than start with outdoor experiments targeting extreme weather.
+6
+Prediction accuracy
+Control Control
+theories technology ELSI
+
+<Reference : Analysis for realization of the Goals>
+Summary of content which is analyzed in the investigative research activities from the Moonshot Research and Development Program’s MILLENNIA Program is shown, as follows:
+(1) Structure of research fields and technologies
+Figure 3 shows the fields and underlying technologies that researchers should
+focus on to realize control of increasingly severe storms, including typhoons, in the context of the workflow of the research process. This Goal is seeking challenging R&D activities that will achieve an understanding of the phenomena required for “control” and the requisite technological level in different technological fields, including prediction technologies such as simulations, as well as establishing core control theories and control techniques and technologies after exploring more appropriate approaches that build on ELSI.
+  •
+Control methods that will yield great results from small disturbances, etc.
+• Controlling the state of water vapor
+• Controlling ground-surface/ocean-surface
+temperature
+• Reducing wind energy, etc.
+Developing control technologies/techniques that are socially, technically, and economically feasible
+   ・Meteorology ・Atmospheric physics ・Computational science ・Measurement engineering ・Mathematical science, etc.
+Constructing control theories
+Improving the accuracy of predictions
+  • • • •
+Deepening understanding of weather
+Making weather models more sophisticated Integrating global and local simulations
+Estimating wide-ranging outcomes and effects, etc.
+ELSI
+Ethical issues Legal issues Social issues, etc.
+ Figure 3: Structure of main fields and technologies relating to the control of extreme weather
+• • •
+Social sciences (law/economics/sociology, etc.) Humanities (philosophy/ethics, etc.), etc.
+・Meteorology ・Atmospheric physics ・Control engineering, etc.
+(2) R&D trends in related fields
+When it comes to international weather organizations, the World
+Meteorological Organization (WMO) carries out the planning and coordination needed to drive harmonious and integrated global meteorological services as a United Nations’ specialist institution. Within the WMO, meetings and reports on weather modification (weather alteration and weather control) are continuing to take place. It provides best practice guidelines for the research and applications
+7
+
+of weather modification, including publishing the “WMO STATEMENT ON WEATHER MODIFICATION” in 2015. This points out the importance of deepening the scientific understanding of the target weather, making observation and prediction technologies more sophisticated, and making plans when undertaking empirical studies on weather modification, especially in relation to research.
+Specific attempts at weather control began around the world during the middle of the 1900s. Among these, the experiments carried out on hurricanes from the 1940s in the U.S. are a typical example of experiments with the ultimate goal of controlling weather that causes damage.
+The first experiment was Project Cirrus, carried out in 1947 over the Atlantic Ocean off the East Coast of America. Although it was not able to confirm any attenuation of force, it did yield outcomes such as appearing to alter the shape of the clouds that formed the hurricane.
+The next experiments were carried out in 1958 and 1961 as part of the National Hurricane Research Project implemented by the National Oceanic and Atmospheric Administration (NOAA). The latter experiments reduced windspeed by 10%, and were announced to be a success.
+The experiments that took place following this were part of Project Stormfury, which began in 1962. The control technique proposed at this time was to artificially stimulate convection outside the “eye wall clouds” (the clouds that make up the huge wall that forms around the eye of a hurricane) by spraying silver iodide. Experiments were carried out in 1963 and 1969. The experiment on Hurricane “Debby” in 1969 produced positive results in that it reduced the windspeed by 30% immediately afterwards.
+However, the weather simulations of this period lacked accuracy, and so it was not possible to clearly distinguish between natural phenomena and any control effects; there is not yet scientific confirmation of whether there were actually any results. Moreover, researchers have pointed out that any artificial stimulus on a large hurricane would have small scope, so these results are questionable. No hurricane control experiments have taken place since then, and NOAA’s research also mainly focuses on making prediction technology more sophisticated and clarifying the details of phenomena.
+8
+
+Table 1: Hurricane control experiments
+  Name of project (country in which it was implemented)
+    Manipulation method
+   Implementation period and institution
+  Project Cirrus (U.S.)
+  Spraying dry ice from an aircraft
+ 1946
+United States Army Signal Corps, United States Naval Research Laboratory
+  National Hurricane Research Project (U.S.)
+   Spraying silver iodide from an aircraft
+  1955–1961 NOAA
+  Project Stormfury (U.S.)
+    Spraying silver iodide from an aircraft
+   1962–1983 NOAA
+ (Source) Summary of excerpt from “1985: Project STORMFURY, A Scientific Chronicle, 1962-1983” Bull. Amer. Meteor. Soc., 66, 505-514.
+On the other hand, experiments on rainfall with a comparatively narrower scope are being carried out all over the world, with the aim of countering droughts and/or ensuring fair skies and visibility. These are being proactively implemented in areas with little rainfall throughout the year and areas in which it is difficult to guarantee water resources during the dry season in particular—currently, research on artificial rainfall is being carried out in around 50 countries.
+Table 2: Main artificial rainfall and snowfall projects in each country
+   Name of project (country in which it was implemented)
+Chinese Weather Modification Project (China)
+Aim
+Artificial rainfall
+Implementation period
+2001–2010
+     The Snowy Precipitation Enhancement Research Project (Australia)
+    Artificial rainfall and snowfall
+   2004–2007
+  Wyoming Weather Modification Pilot Project (U.S.)
+   Artificial rainfall and snowfall
+  2008–2013
+ 9
+
+   Cloud Aerosol Interaction and Precipitation Enhancement Experiment (India)
+The UAE Research Program for Rain Enhancement Science (UAE)
+Artificial 2009–2015 rainfall
+Artificial From 2015 rainfall
+     Precipitation Enhancement Experiments in Catchment Areas of Dams: Evaluation of Water Resource Augmentation and Economic Benefits (Republic of Korea)
+    Artificial rainfall
+   2018–2019
+ (Source) Excerpt from appendix of WMO 2018, “Peer Review Report on Global Precipitation Enhancement Activities”
+Experiments within Japan include an artificial rain experiment that involved spraying dry ice from an aircraft, which was carried out by Kyushu University based on a request from Nippon Hassoden (Company) in 1947, with the cooperation of Kyushu Electric Power and the U.S. military in Japan. Then, from 1951 to around 1965, electric power companies and others became sponsors, universities across Japan and the Meteorological Research Institute got involved, and artificial rainfall experiments using silver iodide and dry ice took place all over Japan, with the aim of securing hydroelectric power generation functions, etc. Even in recent years, experiments such as those in the table below have taken place.
+Table 3: Major Japanese research projects that have implemented outdoor experiments since 2000
+   Name of project
+Aim Implementation period and institution
+  Comprehensive Research on Artificial Rainfall and Snowfall for Measures Against Water Shortages
+   Artificial rainfall and snowfall
+  2006–2010
+The Meteorological Research Institute of the Japan Meteorological Agency, etc.
+  Research on Intentional and Unintentional Weather Modification
+    Artificial rainfall
+   1998–2003
+The Meteorological Research Institute of the Japan Meteorological Agency, etc.
+ Research on the development of suitable technique of artificial
+Artificial 2011–2013 rainfall
+   10
+
+  rainfall and the magnification of application environment
+       Japan International Research Center for Agricultural Sciences, etc.
+ (JST search)
+Dynamic R&D on the weather that this Goal focuses on controlling—i.e. on storms, including typhoons—is being promoted all over the world.
+When it comes to typhoons, the main goal is better predictive accuracy from the perspective of reducing and preventing damage, and the particular main targets are predictions of typhoon courses and intensity. Initiatives to accomplish this include research that is being carried out on high-precision observations of typhoons, the development of technology to assimilate data, and improvements to the accuracy of numerical computation. Notably, although there is progress when it comes to increased accuracy, achieved by improving physical processes and resolution in numerical computation, it is still difficult to reproduce changes in the intensity and occurrence of typhoons. We therefore hope to scientifically clarify the mechanisms behind the occurrence, development, structure, and track of typhoons.
+Figures 4–1 to 4–4 show a year-on-year comparison of the accuracy of forecast in the track and intensity of typhoons. The accuracy of typhoon track forecast by the Japan Meteorological Agency is the top class (Figure 4–1), and is improving year by year (Figure 4–2). On the other hand, the accuracy of intensity forecast is not really improving in terms of both central pressure (Figure 4–3) and windspeed (Figure 4–4); this is an urgent issue when it comes to weather control.
+11
+
+     Figure 4–1: The forecast error of typhoon track in 72 hours (international comparison).
+Figure 4–2: The forecast error of typhoon track of JMA in 24, 48, 72, 96, and 120 hours.
+    Figure 4–3: The forecast error of typhoon intensity (central pressure) of JMA in 24, 48, and 72 hours.
+Figure 4–4: Same as Figure 4-3, but for the surface maximum wind speed.
+ Figure 4: Time series of the typhoon forecast error of track and intensity. (from the Japan Meteorological Agency website (in Japanese))
+The extratropical cyclones that cause heavy rains in different areas often develop in the northwest Pacific Ocean and the northwest Atlantic Ocean in the Northern Hemisphere. It has been argued that that their formation and intensity is connected to the deformation of the initial field caused by very low frequency waves in the global atmosphere, the transformation of the initial field caused by interaction between the atmosphere and the ocean, and the influence of the geographical distribution of ground surface friction related to land-sea distribution. In recent years, the occurrence and development of extratropical cyclones has frequently been reproduced in mathematical models, and the accuracy of short- term predictions is gradually improving. On the other hand, the concentrated downpours that frequently occur in Japan at the end of the rainy season are still thought of as phenomena that are hard to predict. It is believed that they occur
+12
+
+due to complex interactions between mechanical elements, such as synoptic- scale (a horizontal scale, 3,000–5,000 km) convergences, baroclinicity, and topography, and thermodynamic elements, such as the stability of a humid atmosphere; currently, researchers are pointing out the particular importance of water vapor content that affects low-level equivalent-potential temperatures, and so we hope for the development of new technologies that can estimate low-level water vapor content based on various observations, including remote sensing technology; numerical models; and data assimilation technology.
+(3) Strengths of Japan, trends in global research community
+Japan is part of the mid-latitude Asian monsoon climate, and is an elongated
+country that stretches north-south, is surrounded by the ocean, and has steep topography. Due to these unique land conditions, it is strongly affected by a characteristic climate, which includes typhoons and seasonal rain fronts. In this context, while Japan is blessed with a rich natural world, it has developed weather observation and forecast technologies with the aim of preventing and reducing damage from a variety of weather disasters. This goal requires researchers to drive R&D that makes the most of Japanese strengths.
+For example, when it comes to observation technology, there is a need to obtain detailed and accurate data to gain an understanding of the weather—in particular, accurate three-dimensional observations of the status of clouds and water vapor in the atmosphere are required.
+In Japan, world-leading R&D focused on polarized Doppler radars is moving forward, and in 2009 X-band multi-parameter radars that can observe rainfall intensity were installed in metropolitan areas. In addition, research on multi- parameter and phased array weather radars, which can even observe the state of clouds, has progressed through the Cross-ministerial Strategic Innovation Promotion Program (SIP); in FY2017, the world’s first practical equipment was developed and test trials were launched. These examples show that observation equipment is a strength.
+Moreover, weather simulation technology is supported by and developed with computing resources, including the supercomputer Fugaku. For example, a global weather simulation with an 870 m grid, achieved using the K computer in 2013, still boasts the world’s highest resolution. On top of this, the above- mentioned multi-parameter and phased array weather radars and real-time local
+13
+
+weather predictions made using technology that assimilates big data are being used in a world-leading experiment; this also displays Japan’s strength.
+Figure 5 shows the outcomes of a survey on patent application trends relating to technology for the prevention and reduction of disasters. Focusing on the technology category of “heavy rain” in Figure 5–1, it is evident that the number of Japanese patent applications for observation and prediction technology relating to temporal/spatial rainfall data, such as high-performance rainfall radars, is one of the highest in the world. In addition, it is also clear from Figure 5–2 that R&D on data-assimilation and coordination technology that aims to prevent and reduce disasters is progressing on a practical level, with Japan boasting some of the highest numbers of patent applications in the world.
+(Source) Japan Patent Office “FY2013 Report on Survey on Patent Application Technology Trends (Overview): Technology for Disaster Prevention and Disaster Reduction”(in Japanese)
+Table 4 summarizes an international comparison of research on climate change that has a strong relationship with weather observation and predictions based on an overarching report from CRDS R&D.
+The latent potential of research communities that deal with “climate change predictions” based on numerical simulations is huge; for example, Japanese institutions such as the University of Tokyo, the National Institute for Environmental Studies, the Meteorological Research Institute of the Japan Meteorological Agency, and the Japan Agency for Marine-Earth Science and Technology are developing original models. Notably, researchers have produced
+     Figure5–1: Trends in observation and prediction technology
+Figure 5: Patent application trends by country and technology category (2014)
+Figure 5–2: Trends in information integration technology
+14
+
+outcomes that are worthy of mention regarding the relationship between extreme weather and climate change.
+Some of the world’s most advanced equipment is being developed and put to practical use in Japan, including the above-mentioned radar development, so we can understand and observe water vapor, which is a key element in comprehending phenomena such as storms (including typhoons), and is still being studied. In satellite observation, Japan and the U.S. are spearheading the Global Precipitation Measurement (GMP) mission, an international collaboration system that is developing a dual-frequency precipitation radar (DPR) that can provide three-dimensional observations of rainfall with high accuracy, and is currently carrying out observations. Moreover, in 2022, Japan and Europe will jointly launch the EarthCARE satellite, for which millimeter wave Doppler radar is being developed so it can be equipped, with the expectation of observing the convection within clouds. With all these, observation technology that will deepen our understanding of weather is a great Japanese strength.
+When aiming for weather control in 30 years, it is necessary to promote research while considering how the climate will change in the future, and researchers must coordinate with climate change research as they carry out their work. In these cases, researchers need to make the most of climate change observations and predictions, as well as Japanese strengths, to strategically focus their efforts.
+15
+
+Table 4. International comparison of relevant technology fields
+      Country/region Phase
+Japan research
+U.S.
+Europe
+Basic Applied research R&D
+China research R&D
+         Basic
+Applied R&D
+Basic research
+Applied R&D
+Basic
+Applied
+  Climate change predictions
+  Current
+   ◎
+   ○
+   ◎
+   ◎
+   ◎
+   ◎
+   △
+   △
+  Trend
+ →
+ ↗
+ →
+ ↘
+ →
+ ↗
+ →
+ ↗
+  The water cycle (water resources, flood prevention)
+  Current
+   ◎
+   ○
+   ◎
+   ◎
+   ○
+   ◎
+   ○
+   ○
+  Trend
+ →
+ ↗
+ →
+ ↗
+ →
+ →
+ →
+ →
+  Climate change observations (atmosphere, land)
+  Current
+  ○
+  ○
+  ◎
+  ◎
+  ◎
+  ◎
+  ○
+  △
+  Trend
+  ↗
+  →
+  ↗
+  →
+  ↗
+  ↗
+  ↗
+  →
+  Climate change observations (Oceans)
+   Current
+  ○
+  △
+  ◎
+  ◎
+  ◎
+  △
+  ○
+  △
+  Trend
+   →
+   →
+   →
+   →
+   →
+   →
+   ↗
+   →
+ (Source) JST CRDS “Panoramic View Report: Environment and Energy Field (2021)”
+(Note 1) Phase Basic research phase: The scope of basic research carried out at a university or national research institute, etc.
+Applied R&D phase: The scope of technological development (including the development of prototypes)
+(Note 2) Current: *This is an absolute evaluation rather than a comparative assessment based on the current situation in Japan.
+◎:Especiallyremarkableactivities/outcomesvisible; ○:Remarkableactivities/outcomesvisible; △: No remarkable activities/outcomes visible; ×: No activities/outcomes visible
+(Note 3) Trend ↗: Upward trend; →: Maintaining status quo; ↘: Downward trend
+16

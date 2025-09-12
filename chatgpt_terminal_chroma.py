@@ -2,8 +2,8 @@
 import os
 import logging
 from openai import OpenAI
-from langchain.vectorstores import Chroma
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_chroma import Chroma  # Updated import for Chroma
+from langchain_openai import OpenAIEmbeddings  # Updated import for OpenAIEmbeddings
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

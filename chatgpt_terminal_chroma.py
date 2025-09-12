@@ -19,7 +19,7 @@ client = OpenAI(api_key=api_key)
 # Initialize Chroma DB
 CHROMA_DIR = "chroma_db"
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
-vectordb = Chroma(persist_directory=CHROMA_DIR, embedding_function=embeddings)
+vectordb = Chroma(persist_directory=CHROMA_DIR, embedding_function=embeddings, collection_name="weather_data")  # Ensure collection name matches
 
 # Inspect ChromaDB contents
 try:

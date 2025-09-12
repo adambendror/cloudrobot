@@ -48,15 +48,13 @@ while True:
     try:
         results = vectordb.similarity_search(user_input, k=3)  # Retrieve top 3 relevant chunks
         context = "\n".join([result.page_content for result in results])
-        # logging.info(f"ChromaDB Query Results: {results}")  # Commented out
     except Exception as e:
-        # logging.error(f"Error querying Chroma DB: {e}")  # Commented out
         context = ""
 
-    # Add context to the conversation history
+    # Add limited context to the conversation history
     if context:
-        conversation_history.append({"role": "system", "content": f"Relevant context: {context}"})
-        # logging.info(f"Context added to conversation: {context}")  # Commented out
+        limited_context = context.split("\n")[0]  # Use only the first chunk or line
+        conversation_history.append({"role": "system", "content": f"Relevant context: {limited_context}"})
 
     conversation_history.append({"role": "user", "content": user_input})
 

@@ -10,8 +10,12 @@ CHROMA_DIR = "chroma_db"
 texts = []
 for filename in os.listdir(RAG_FOLDER):
     if filename.endswith(".txt"):
-        with open(os.path.join(RAG_FOLDER, filename), "r", encoding="utf-8") as f:
-            texts.append(f.read())
+        filepath = os.path.join(RAG_FOLDER, filename)
+        with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+            print(f"Reading file: {filepath}")
+            print(f"Content: {content[:100]}...")  # Print the first 100 characters
+            texts.append(content)
 
 # Initialize embeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")

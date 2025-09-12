@@ -13,7 +13,10 @@ client = OpenAI(api_key=api_key)
 print("=== Cloud Terminal ===")
 print("Type 'exit' or 'quit' to end the session.\n")
 
-conversation_history = []
+# Add a system prompt to define the assistant's behavior
+conversation_history = [
+    {"role": "system", "content": "You are Cloud, a helpful and friendly assistant for weather-related queries."}
+]
 
 while True:
     user_input = input("You: ").strip()

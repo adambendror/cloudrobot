@@ -60,7 +60,7 @@ nav button.on{color:var(--acc)}
 .page{overflow-y:auto;padding:18px 16px}
 h1{margin:0;font-size:24px}
 #gcount{margin:2px 0 14px;color:var(--mut);font-size:14px}
-#grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 8px}.grp{grid-column:1/-1;margin:8px 0 0;font-size:16px}.card .th{width:100%;display:block}.cap{margin:6px 2px 0;font-size:12px;line-height:1.35;color:var(--mut);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px 8px}.grp{grid-column:1/-1;margin:8px 0 0;font-size:16px}.card .th{width:100%;display:block}.cap{margin:6px 2px 0;font-size:12px;line-height:1.35;color:var(--mut);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .th{aspect-ratio:1;border:0;padding:0;border-radius:12px;overflow:hidden;background:var(--card)}
 .th img{width:100%;height:100%;object-fit:cover;display:block}
 .th.new{outline:3px solid var(--pink)}
@@ -71,6 +71,26 @@ h1{margin:0;font-size:24px}
 .set input[type=password]{display:block;width:100%;box-sizing:border-box;margin-top:8px;padding:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font-size:16px}
 .note{color:var(--mut);font-size:14px;line-height:1.5}
 #toast{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);background:#23262B;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;display:none;max-width:86%;text-align:center;z-index:5}
+.side{display:contents}
+@media (orientation:landscape) and (max-height:600px){
+nav button{padding:8px 0}
+.side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex:1;min-width:0}
+#v-buddy.on{flex-direction:row;gap:16px;padding:8px 16px}
+#v-buddy .fw{width:min(46vw,calc((100vh - 84px)*1.2))}
+#v-buddy.big .fw{aspect-ratio:4/3;width:min(52vw,calc((100vh - 84px)*1.333))}
+#say{min-height:0;font-size:16px;max-width:none}
+.ctl{max-width:100%;gap:6px}
+#shutter{width:54px;height:54px}
+.ghost{padding:9px 18px;font-size:15px}
+.pill{padding:11px 22px}
+#pv.on{flex-direction:row}
+#pvimg{height:100%}
+#pv .side{flex:0 0 36%;min-width:200px}
+#v-photo.on{flex-direction:row}
+#pimg{height:100%}
+#v-photo .side{flex:0 0 38%;min-width:220px}
+.page{padding:12px 16px}
+}
 @media (prefers-reduced-motion:reduce){#eyes,#lenses{transition:none}}
 </style>
 </head>
@@ -90,12 +110,12 @@ h1{margin:0;font-size:24px}
 </svg>
 <div id="lenses"><div class="lens"><video autoplay playsinline muted></video></div><div class="lens"><video autoplay playsinline muted></video></div></div>
 </div>
-<p class="hint">Tap an eye to look closer</p>
+<div class="side"><p class="hint">Tap an eye to look closer</p>
 <p id="say">Hello! Open my eyes and let’s look at the sky.</p>
 <div class="ctl"><div id="lensrow" style="display:flex;gap:8px"></div><div id="zrow"><span id="zl">1.0×</span><input type="range" id="zoom" min="1" max="5" step="0.1" value="1" aria-label="Zoom"></div><button id="shutter" aria-label="Take photo"></button><button class="ghost" id="ask">What do you see?</button></div>
 <button class="pill" id="go">Open my eyes</button>
-<button class="ghost" id="native" hidden>Use phone camera app</button><input type="file" id="nat" accept="image/*" capture="environment" hidden>
-<div id="pv"><img id="pvimg" alt="Photo preview"><p id="pvmsg"></p><div class="row"><button class="ghost" id="retake">Retake</button><button class="pill" id="keep">Add to garden</button></div></div>
+<button class="ghost" id="native" hidden>Use phone camera app</button><input type="file" id="nat" accept="image/*" capture="environment" hidden></div>
+<div id="pv"><img id="pvimg" alt="Photo preview"><div class="side"><p id="pvmsg"></p><div class="row"><button class="ghost" id="retake">Retake</button><button class="pill" id="keep">Add to garden</button></div></div></div>
 </section>
 <section id="v-garden" class="view page">
 <h1>Cloud garden</h1><p id="gcount"></p>
@@ -104,8 +124,8 @@ h1{margin:0;font-size:24px}
 <p id="empty">No clouds yet.<br>Go to Buddy and find one.</p>
 </section>
 <section id="v-photo" class="view">
-<img id="pimg" alt="Cloud photo"><p id="pdesc"></p><p id="ptags" class="note" style="text-align:center;margin:4px 16px 0"></p><p id="pdate"></p>
-<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="share">Save or share</button><button class="ghost" id="del">Delete</button></div>
+<img id="pimg" alt="Cloud photo"><div class="side"><p id="pdesc"></p><p id="ptags" class="note" style="text-align:center;margin:4px 16px 0"></p><p id="pdate"></p>
+<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="share">Save or share</button><button class="ghost" id="del">Delete</button></div></div>
 </section>
 <section id="v-set" class="view page">
 <h1>Settings</h1>
@@ -187,7 +207,7 @@ async function startCam(devId){
   $("#native").hidden=true;
   try{
     if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw {name:"NoMediaDevices"};
-    try{stream=await navigator.mediaDevices.getUserMedia({video:{...(devId?{deviceId:{exact:devId}}:{facingMode:{ideal:"environment"}}),width:{ideal:1920},height:{ideal:1080}},audio:false})}
+    try{stream=await navigator.mediaDevices.getUserMedia({video:{...(devId?{deviceId:{exact:devId}}:{facingMode:{ideal:"environment"}}),width:{ideal:innerWidth>innerHeight?1920:1080},height:{ideal:innerWidth>innerHeight?1080:1920}},audio:false})}
     catch(e1){if(e1&&(e1.name==="NotAllowedError"||e1.name==="SecurityError"))throw e1;stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false})}
     vids.forEach(v=>{v.srcObject=stream;v.play().catch(()=>{})});
     track=stream.getVideoTracks()[0];
@@ -226,6 +246,9 @@ function setZoom(z){
 }
 slider.oninput=()=>setZoom(parseFloat(slider.value));
 $("#go").onclick=()=>startCam();
+let oT=null;
+function onRot(){clearTimeout(oT);oT=setTimeout(()=>{if(!stream||cur!=="buddy")return;const v=vids[0];if(!v.videoWidth)return;if((v.videoWidth>v.videoHeight)!==(innerWidth>innerHeight)){let id=null;try{id=track.getSettings().deviceId}catch(e){}startCam(id)}},500)}
+addEventListener("orientationchange",onRot);addEventListener("resize",onRot);
 let pd=0,pz=1;
 const dist=e=>Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
 $("#v-buddy").addEventListener("touchstart",e=>{if(e.touches.length===2){pd=dist(e);pz=zoom}},{passive:true});

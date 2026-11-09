@@ -25,11 +25,23 @@ nav button.on{color:var(--acc)}
 #eo ellipse{transform-box:fill-box;transform-origin:center;transition:transform .12s}
 #eo.blink ellipse{transform:scaleY(.08)}
 #lenses{position:absolute;inset:0}
-.lens{position:absolute;width:19%;aspect-ratio:1;top:38.6%;border-radius:50%;overflow:hidden;border:3px solid #1A1A1A;box-sizing:border-box;background:#1A1A1A;display:none;transition:transform .12s}
-.lens:first-child{left:20.5%}.lens:last-child{left:60.5%}
+.lens{position:absolute;width:27%;aspect-ratio:1;top:33.6%;border-radius:50%;overflow:hidden;border:4px solid #1A1A1A;box-sizing:border-box;background:#1A1A1A;display:none;transition:transform .12s;cursor:pointer}
+.lens:first-child{left:16.5%}.lens:last-child{left:56.5%}
 .lens video{width:100%;height:100%;object-fit:cover;transform-origin:center;display:block}
 .lens.blink{transform:scaleY(.08)}
-.live .lens{display:block}.live #eo{display:none}.happy #lenses{display:none}
+.lens::after{content:"";position:absolute;width:15%;height:15%;border-radius:50%;background:#fff;opacity:.85;top:16%;right:20%;pointer-events:none}
+.live .lens{display:block;animation:eyeopen .7s cubic-bezier(.25,1.6,.45,1) both}
+@keyframes eyeopen{0%{transform:scale(.12,.02);opacity:0}35%{opacity:1}100%{transform:scale(1,1);opacity:1}}
+.live #eo{display:none}.happy #lenses{display:none}
+.fw{transition:width .35s ease}
+.big .fw{width:min(92vw,calc(52vh*.75));aspect-ratio:3/4}
+.big .fw svg{opacity:0}
+.big #lenses{transform:none!important}
+.big .lens:first-child{left:0;top:0;width:100%;height:100%;aspect-ratio:auto;border-radius:30px}
+.big .lens:last-child{display:none}
+.big .lens::after{display:none}
+.hint{margin:0;font-size:13px;color:#6B6F76;display:none}
+.live .hint{display:block}
 #say{margin:0;min-height:3.2em;text-align:center;font-size:18px;font-weight:700;max-width:320px;line-height:1.35}
 .pill{border:0;border-radius:999px;background:#1F6FA8;color:#fff;font-weight:700;font-size:16px;font-family:inherit;padding:13px 24px}
 .ghost{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font-weight:700;font-size:16px;font-family:inherit;padding:12px 22px}
@@ -78,6 +90,7 @@ h1{margin:0;font-size:24px}
 </svg>
 <div id="lenses"><div class="lens"><video autoplay playsinline muted></video></div><div class="lens"><video autoplay playsinline muted></video></div></div>
 </div>
+<p class="hint">Tap an eye to look closer</p>
 <p id="say">Hello! Open my eyes and let’s look at the sky.</p>
 <div class="ctl"><div id="lensrow" style="display:flex;gap:8px"></div><div id="zrow"><span id="zl">1.0×</span><input type="range" id="zoom" min="1" max="5" step="0.1" value="1" aria-label="Zoom"></div><button id="shutter" aria-label="Take photo"></button><button class="ghost" id="ask">What do you see?</button></div>
 <button class="pill" id="go">Open my eyes</button>
@@ -138,11 +151,17 @@ function setMood(k,text){
   $("#v-buddy").classList.toggle("happy",!!o.h);$("#eo").style.display=o.h?"none":"";$("#eh").style.display=o.h?"":"none";
   if(text!==undefined)say.textContent=text;
 }
-function blink(){$("#eo").classList.add("blink");lenses.forEach(l=>l.classList.add("blink"));setTimeout(()=>{$("#eo").classList.remove("blink");lenses.forEach(l=>l.classList.remove("blink"))},150)}
+function blink(){$("#eo").classList.add("blink");if(!$("#v-buddy").classList.contains("big"))lenses.forEach(l=>l.classList.add("blink"));setTimeout(()=>{$("#eo").classList.remove("blink");lenses.forEach(l=>l.classList.remove("blink"))},150)}
 setInterval(()=>{if(cur==="buddy"&&mood!=="happy")blink()},3300);
 setInterval(()=>{if(cur!=="buddy"||mood!=="idle")return;moveEyes((Math.random()-.5)*22,0);setTimeout(()=>{if(mood==="idle")moveEyes(0,0)},1300)},6500);
 setInterval(()=>{if(cur==="buddy"&&mood==="idle"&&wantCam&&Date.now()-lastAct>20000)setMood("curious","Is there a cloud out there?")},4000);
-$(".fw").onclick=()=>{lastAct=Date.now();wake();setMood("happy","Hehe.");setTimeout(()=>setMood("idle",HELLO),1500)};
+$(".fw").onclick=()=>{lastAct=Date.now();wake();if($("#v-buddy").classList.contains("big"))return;setMood("happy","Hehe.");setTimeout(()=>setMood("idle",HELLO),1500)};
+lenses.forEach(l=>l.onclick=e=>{
+  if(!stream)return;e.stopPropagation();lastAct=Date.now();
+  const v=$("#v-buddy");v.classList.toggle("big");
+  lenses.forEach(x=>{x.style.animation="none";void x.offsetWidth;x.style.animation=""});
+  $(".hint").textContent=v.classList.contains("big")?"Tap the picture to see my face again":"Tap an eye to look closer";
+});
 window.addEventListener("deviceorientation",e=>{
   if(cur!=="buddy"||e.beta==null)return;
   if(e.beta>115&&mood==="idle"){tilted=true;setMood("curious","Ooh, look at all that sky!")}
@@ -198,7 +217,7 @@ async function buildLenses(){
     });
   }catch(e){}
 }
-function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;track=null}vids.forEach(v=>v.srcObject=null);$("#v-buddy").classList.remove("live");$("#pv").classList.remove("on")}
+function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;track=null}vids.forEach(v=>v.srcObject=null);$("#v-buddy").classList.remove("live","big");$("#pv").classList.remove("on")}
 function setZoom(z){
   z=Math.min(zmax,Math.max(zmin,z));zoom=z;slider.value=z;
   $("#zl").textContent=z.toFixed(1)+"×";
@@ -244,6 +263,12 @@ function localText(c){
 }
 const PROMPT=`You are a gentle, curious plush weather-spotting buddy talking to a child. Look at this photo. It may show anything: sky, a person, an object, food, a street. First say in one short sentence what you see (for people, only general things like clothing or what they are doing, never who they are). Then in one short sentence relate it playfully to clouds or weather: how weather affects it, what the light or shadows say, or what clouds might be above it. If clouds are visible, name the type. Reply with ONLY JSON like {"seen":"...","weather":"...","cloud":"cumulus|cirrus|stratus|stratocumulus|altocumulus|nimbostratus|cumulonimbus|none","mood":"sunny|cloudy|rainy|stormy|foggy|snowy|clear|unknown"}. Use simple words. No emoji.`;
 const OLDP="You are a gentle, curious plush weather-spotting buddy talking to a child. Look at this photo. In at most three short, simple sentences, say what you see (it could be anything: sky, trees, puddles, buildings, animals, objects, people in general) and connect it to the weather in a fun way, such as what the weather might be, what the light, shadows or wet ground tell us, or how weather affects that thing. If you can see clouds, name the kind. No lists, no emoji. Never guess personal details about people.";
+function parseCloud(txt){
+  const f=k=>{const m=txt.match(new RegExp('"'+k+'"\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)'));if(!m)return "";try{return JSON.parse('"'+m[1]+'"')}catch(e){return m[1].replace(/\\"/g,'"')}};
+  const o={seen:f("seen"),weather:f("weather"),cloud:f("cloud")||"unclear",mood:f("mood")||"unknown"};
+  if(!o.seen){o.seen=txt.replace(/```json|```/g,"").replace(/^[\s{"]*seen["\s:]*/i,"").trim();o.weather=""}
+  return o;
+}
 async function describe(c){
   lastErr="";const loc=localDescribe(c);loc.cf=lastCf;
   const key=ls("cb_key");
@@ -253,10 +278,10 @@ async function describe(c){
       s.width=Math.round(c.width*sc);s.height=Math.round(c.height*sc);
       s.getContext("2d").drawImage(c,0,0,s.width,s.height);
       const data=s.toDataURL("image/jpeg",.8).split(",")[1];
-      const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"content-type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:300,messages:[{role:"user",content:[{type:"image",source:{type:"base64",media_type:"image/jpeg",data}},{type:"text",text:PROMPT}]}]})});
+      const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"content-type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:800,messages:[{role:"user",content:[{type:"image",source:{type:"base64",media_type:"image/jpeg",data}},{type:"text",text:PROMPT}]}]})});
       if(!r.ok)throw new Error(r.status+" "+(await r.text()).slice(0,140));
       const j=await r.json(),txt=(j.content||[]).filter(p=>p.type==="text").map(p=>p.text).join(" ").trim();
-      if(txt){try{const o=JSON.parse(txt.replace(/```json|```/g,"").trim());if(o&&o.seen){o.cf=loc.cf;return o}}catch(e){}loc.seen=txt;loc.weather="";return loc}
+      if(txt){const o=parseCloud(txt);if(o.seen){o.cf=loc.cf;if(j.stop_reason==="max_tokens"){const e=o.weather||o.seen;if(!/[.!?]$/.test(e.trim())){if(o.weather)o.weather+="…";else o.seen+="…"}}return o}}
       lastErr="Claude sent an empty reply ("+j.stop_reason+")";
     }catch(e){lastErr="Claude error: "+(e&&e.message||e);toast(lastErr)}
   }

@@ -37,21 +37,52 @@ a.v.latest{border:2px solid var(--pink)}
 <p class="foot">All versions share one cloud garden on this phone, so your photos appear in each of them. Older versions show fewer details for each photo.</p>
 </main>
 <script>
-// Newest first. To add a version: upload its file next to this one and add a line here.
-const VERSIONS=[
+// Versions are found automatically: any file in this folder named v<number>-<name>.html is listed.
+// The list below is only used if the automatic lookup fails.
+const FALLBACK=[
   {file:"v2-field-notes.html",name:"Version 2: Field notes",date:"12 Nov 2026",what:"The camera lives in Futocoron’s eyes. Each photo gets your description, Futocoron’s description, cloud type, weather, GPS, the forecast and a prediction."},
   {file:"v1-first-look.html",name:"Version 1: First look",date:"9 Nov 2026",what:"The first sketch: a face, a separate camera screen with zoom, and a simple garden."}
 ];
 const list=document.getElementById("list");
-VERSIONS.forEach((v,i)=>{
-  const a=document.createElement("a");a.className="v"+(i===0?" latest":"");a.href=v.file;
-  const top=document.createElement("div");top.className="top";
-  const n=document.createElement("span");n.className="name";n.textContent=v.name;top.append(n);
-  if(i===0){const t=document.createElement("span");t.className="tag";t.textContent="Latest";top.append(t)}
-  const d=document.createElement("span");d.className="date";d.textContent=v.date;top.append(d);
-  const w=document.createElement("p");w.className="what";w.textContent=v.what;
-  a.append(top,w);list.append(a);
-});
+const num=f=>parseInt((f.match(/^v(\d+)/i)||[0,0])[1],10);
+function nice(f){const m=f.match(/^v(\d+)[-_ ]?(.*)\.html$/i);if(!m)return f;const w=m[2].replace(/[-_]+/g," ").trim();return "Version "+m[1]+(w?": "+w.charAt(0).toUpperCase()+w.slice(1):"")}
+function draw(vs){
+  list.innerHTML="";
+  vs.forEach((v,i)=>{
+    const a=document.createElement("a");a.className="v"+(i===0?" latest":"");a.href=v.file;
+    const top=document.createElement("div");top.className="top";
+    const n=document.createElement("span");n.className="name";n.textContent=v.name;top.append(n);
+    if(i===0){const t=document.createElement("span");t.className="tag";t.textContent="Latest";top.append(t)}
+    if(v.date){const d=document.createElement("span");d.className="date";d.textContent=v.date;top.append(d)}
+    a.append(top);
+    if(v.what){const w=document.createElement("p");w.className="what";w.textContent=v.what;a.append(w)}
+    list.append(a);
+  });
+}
+async function details(file){
+  const v={file,name:nice(file),date:"",what:""};
+  try{
+    const r=await fetch(file,{cache:"no-cache"});if(!r.ok)return v;
+    const doc=new DOMParser().parseFromString(await r.text(),"text/html");
+    const g=n=>{const m=doc.querySelector('meta[name="'+n+'"]');return m?m.getAttribute("content")||"":""};
+    v.name=g("version-name")||v.name;v.date=g("version-date");v.what=g("description");
+  }catch(e){}
+  return v;
+}
+async function discover(){
+  const host=location.hostname;if(!/\.github\.io$/i.test(host))throw new Error("not on GitHub Pages");
+  const owner=host.split(".")[0],parts=location.pathname.split("/").filter(Boolean);
+  if(parts.length&&/\.html?$/i.test(parts[parts.length-1]))parts.pop();
+  const repo=parts.length?parts.shift():host;
+  const r=await fetch("https://api.github.com/repos/"+owner+"/"+repo+"/contents/"+parts.join("/"),{headers:{accept:"application/vnd.github+json"}});
+  if(!r.ok)throw new Error("GitHub "+r.status);
+  const files=(await r.json()).filter(f=>f.type==="file"&&/^v\d+.*\.html$/i.test(f.name)).map(f=>f.name);
+  if(!files.length)throw new Error("no version files");
+  files.sort((a,b)=>num(b)-num(a)||b.localeCompare(a));
+  return Promise.all(files.map(details));
+}
+draw(FALLBACK);
+discover().then(draw).catch(()=>{});
 </script>
 </body>
 </html>

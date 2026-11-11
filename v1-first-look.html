@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Futocoron v1</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+<style>
+:root{--bg:#F6F5F0;--card:#FFFFFF;--ink:#23262B;--mut:#6B6F76;--line:#E2E0D8;--acc:#1F6FA8;--pink:#E58CB3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181B;--card:#1F2327;--ink:#ECEAE4;--mut:#9AA0A6;--line:#30363B;--acc:#7FC4EA}}
+:root[data-theme="dark"]{--bg:#15181B;--card:#1F2327;--ink:#ECEAE4;--mut:#9AA0A6;--line:#30363B;--acc:#7FC4EA}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito",ui-rounded,system-ui,sans-serif;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+#app{height:100%;display:flex;flex-direction:column}
+main{flex:1;position:relative;min-height:0}
+.view{position:absolute;inset:0;display:none;flex-direction:column}
+.view.on{display:flex}
+nav{display:flex;background:var(--card);border-top:1px solid var(--line)}
+nav button{flex:1;padding:14px 0;border:0;background:none;color:var(--mut);font-weight:700;font-size:15px;font-family:inherit}
+nav button.on{color:var(--acc)}
+#v-buddy{background:#FBFBF8;color:#3C4650;align-items:center;justify-content:center;gap:12px;padding:16px}
+#face{width:100%;max-width:360px;max-height:60%;touch-action:manipulation}
+#eyes{transition:transform .5s ease}
+#eyes ellipse{transform-box:fill-box;transform-origin:center;transition:transform .12s}
+#eo.blink ellipse{transform:scaleY(.08)}
+#say{margin:0;min-height:2.6em;text-align:center;font-size:19px;font-weight:700;max-width:300px}
+.pill{border:0;border-radius:999px;background:#1F6FA8;color:#fff;font-weight:700;font-size:17px;font-family:inherit;padding:14px 28px}
+#stage{flex:1;position:relative;overflow:hidden;background:#000;touch-action:none}
+#video{width:100%;height:100%;object-fit:cover;transform-origin:center}
+#zl{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:4px 12px;font-weight:700;font-size:14px}
+#camerr{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-align:center;padding:24px}
+#bar{background:#000;padding:10px 20px 14px;display:flex;flex-direction:column;gap:10px;align-items:center}
+#zrow{display:flex;align-items:center;gap:10px;width:100%;color:#fff;font-size:13px}
+#zoom{flex:1;accent-color:#7FC4EA}
+#shutter{width:68px;height:68px;border-radius:50%;border:4px solid #fff;background:none;padding:0;position:relative}
+#shutter::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#fff}
+#pv{position:absolute;inset:0;background:#000;display:none;flex-direction:column;color:#fff}
+#pv.on{display:flex}
+#pv img,#pimg{flex:1;min-height:0;width:100%;object-fit:contain}
+#pvmsg{text-align:center;padding:12px 16px 4px;font-weight:700;font-size:17px;margin:0}
+.row{display:flex;gap:10px;justify-content:center;padding:12px 16px 16px}
+.ghost{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font-weight:700;font-size:16px;font-family:inherit;padding:12px 24px}
+#pv .ghost{background:none;color:#fff;border-color:#666}
+#v-garden{overflow-y:auto;padding:18px 16px}
+h1{margin:0;font-size:24px}
+#gcount{margin:2px 0 14px;color:var(--mut);font-size:14px}
+#grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.th{aspect-ratio:1;border:0;padding:0;border-radius:12px;overflow:hidden;background:var(--card)}
+.th img{width:100%;height:100%;object-fit:cover;display:block}
+.th.new{outline:3px solid var(--pink)}
+#empty{display:none;color:var(--mut);line-height:1.5;padding:30px 10px;text-align:center}
+#v-photo{background:var(--bg)}
+#pdate{text-align:center;color:var(--mut);font-size:14px;margin:10px 0 0}
+#toast{position:absolute;left:50%;bottom:90px;transform:translateX(-50%);background:#23262B;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;display:none;max-width:86%;text-align:center;z-index:5}
+@media (prefers-reduced-motion:reduce){#eyes{transition:none}}
+</style>
+</head>
+<body>
+<div id="app">
+<main>
+<section id="v-buddy" class="view on">
+<svg id="face" viewBox="0 0 300 250" role="img" aria-label="Futocoron face">
+<ellipse cx="52" cy="172" rx="26" ry="20" fill="#E58CB3"/>
+<ellipse cx="248" cy="172" rx="26" ry="20" fill="#E58CB3"/>
+<g id="eyes">
+<g id="eo"><ellipse cx="90" cy="125" rx="11" ry="14" fill="#1A1A1A"/><ellipse cx="210" cy="125" rx="11" ry="14" fill="#1A1A1A"/></g>
+<g id="eh" style="display:none" fill="none" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round"><path d="M76 135 Q90 112 104 135"/><path d="M196 135 Q210 112 224 135"/></g>
+</g>
+<path id="mouth" d="M125 178 Q150 198 175 178" fill="none" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<p id="say">Hello. Shall we look at the sky?</p>
+<button class="pill" id="go">Find a cloud</button>
+</section>
+<section id="v-cam" class="view">
+<div id="stage"><video id="video" autoplay playsinline muted></video><div id="zl">1.0×</div>
+<div id="camerr"><p id="camtxt"></p><button class="pill" id="retry">Try again</button><button class="ghost" id="native">Use phone camera app</button><input type="file" id="nat" accept="image/*" capture="environment" hidden></div>
+<div id="pv"><img id="pvimg" alt="Photo preview"><p id="pvmsg"></p><div class="row"><button class="ghost" id="retake">Retake</button><button class="pill" id="keep">Add to garden</button></div></div></div>
+<div id="bar"><div id="zrow"><span>Zoom</span><input type="range" id="zoom" min="1" max="5" step="0.1" value="1" aria-label="Zoom"></div><button id="shutter" aria-label="Take photo"></button></div>
+</section>
+<section id="v-garden" class="view">
+<h1>Cloud garden</h1><p id="gcount"></p>
+<div id="grid"></div>
+<p id="empty">No clouds yet.<br>Tap Camera and find one.</p>
+</section>
+<section id="v-photo" class="view">
+<img id="pimg" alt="Cloud photo"><p id="pdate"></p>
+<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="share">Save or share</button><button class="ghost" id="del">Delete</button></div>
+</section>
+<div id="toast"></div>
+</main>
+<nav><button data-v="buddy" class="on">Futocoron</button><button data-v="cam">Camera</button><button data-v="garden">Garden</button></nav>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const views={buddy:$("#v-buddy"),cam:$("#v-cam"),garden:$("#v-garden"),photo:$("#v-photo")};
+const HELLO="Hello. Shall we look at the sky?";
+let cur="buddy",mood="idle",lastAct=Date.now(),tilted=false;
+
+function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",2600)}
+function show(n){
+  if(cur==="cam"&&n!=="cam")stopCam();
+  cur=n;lastAct=Date.now();
+  for(const k in views)views[k].classList.toggle("on",k===n);
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===n||(n==="photo"&&b.dataset.v==="garden")));
+  if(n==="cam")startCam();
+  if(n==="garden")renderGarden();
+}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>show(b.dataset.v));
+$("#go").onclick=()=>show("cam");
+
+const M={
+  idle:{y:0,d:"M125 178 Q150 198 175 178",f:"none",h:0},
+  curious:{y:-34,d:"M141 184 Q150 204 159 184 Q150 176 141 184Z",f:"#1A1A1A",h:0},
+  happy:{y:0,d:"M112 172 Q150 218 188 172",f:"none",h:1}
+};
+function setMood(k,text){
+  mood=k;const o=M[k];
+  $("#eyes").style.transform="translate(0px,"+o.y+"px)";
+  $("#mouth").setAttribute("d",o.d);$("#mouth").setAttribute("fill",o.f);
+  $("#eo").style.display=o.h?"none":"";$("#eh").style.display=o.h?"":"none";
+  if(text!==undefined)$("#say").textContent=text;
+}
+setInterval(()=>{if(cur!=="buddy"||mood==="happy")return;const e=$("#eo");e.classList.add("blink");setTimeout(()=>e.classList.remove("blink"),150)},3300);
+setInterval(()=>{if(cur!=="buddy"||mood!=="idle")return;$("#eyes").style.transform="translate("+((Math.random()-.5)*22)+"px,0px)";setTimeout(()=>{if(mood==="idle")$("#eyes").style.transform="translate(0px,0px)"},1300)},6500);
+setInterval(()=>{if(cur==="buddy"&&mood==="idle"&&Date.now()-lastAct>20000){setMood("curious","Is there a cloud out there?")}},4000);
+$("#face").onclick=()=>{lastAct=Date.now();wake();setMood("happy","Hehe.");setTimeout(()=>setMood("idle",HELLO),1500)};
+window.addEventListener("deviceorientation",e=>{
+  if(cur!=="buddy"||e.beta==null)return;
+  if(e.beta>115&&mood==="idle"){tilted=true;setMood("curious","Ooh, look at all that sky!")}
+  else if(e.beta<100&&tilted&&mood==="curious"){tilted=false;setMood("idle",HELLO)}
+});
+let lock=null;
+async function wake(){try{if(navigator.wakeLock&&!lock){lock=await navigator.wakeLock.request("screen");lock.addEventListener("release",()=>lock=null)}}catch(e){}}
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")wake()});
+
+let stream=null,track=null,hw=false,zmin=1,zmax=5,zoom=1;
+const video=$("#video"),slider=$("#zoom");
+async function startCam(){
+  $("#camerr").style.display="none";
+  try{
+    if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw {name:"NoMediaDevices"};
+    try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"},width:{ideal:1920},height:{ideal:1080}},audio:false})}
+    catch(e1){if(e1&&(e1.name==="NotAllowedError"||e1.name==="SecurityError"))throw e1;stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false})}
+    video.srcObject=stream;track=stream.getVideoTracks()[0];
+    let caps={};try{caps=track.getCapabilities?track.getCapabilities():{}}catch(e){}
+    if(caps.zoom){hw=true;zmin=caps.zoom.min;zmax=caps.zoom.max}else{hw=false;zmin=1;zmax=5}
+    slider.min=zmin;slider.max=zmax;slider.step=Math.max(0.05,(zmax-zmin)/100);
+    setZoom(zmin);wake();
+  }catch(err){
+    const n=(err&&err.name)||"Error";
+    $("#camtxt").textContent=(n==="NotAllowedError"||n==="SecurityError")?"Camera is blocked ("+n+"). Allow Camera in Chrome’s site settings, then try again.":n==="NotReadableError"?"Another app is using the camera. Close it, then try again.":n==="NotFoundError"?"No camera found ("+n+").":"Camera isn’t available ("+n+").";
+    $("#camerr").style.display="flex";
+  }
+}
+function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;track=null}$("#pv").classList.remove("on")}
+function setZoom(z){
+  z=Math.min(zmax,Math.max(zmin,z));zoom=z;slider.value=z;
+  $("#zl").textContent=z.toFixed(1)+"×";
+  if(hw&&track){track.applyConstraints({advanced:[{zoom:z}]}).catch(()=>{});video.style.transform=""}
+  else video.style.transform="scale("+z+")";
+}
+slider.oninput=()=>setZoom(parseFloat(slider.value));
+$("#retry").onclick=startCam;
+$("#native").onclick=()=>$("#nat").click();
+$("#nat").onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;pending={id:Date.now(),t:Date.now(),blob:f,score:.5};$("#pvimg").src=URL.createObjectURL(f);$("#pvmsg").textContent="Nice one! Add it to the garden?";$("#camerr").style.display="none";$("#pv").classList.add("on");e.target.value=""};
+let pd=0,pz=1;
+const dist=e=>Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+$("#stage").addEventListener("touchstart",e=>{if(e.touches.length===2){pd=dist(e);pz=zoom}},{passive:true});
+$("#stage").addEventListener("touchmove",e=>{if(e.touches.length===2&&pd){e.preventDefault();setZoom(pz*dist(e)/pd)}},{passive:false});
+$("#stage").addEventListener("touchend",()=>{pd=0});
+
+function skyScore(c){
+  const s=document.createElement("canvas");s.width=s.height=24;
+  const x=s.getContext("2d");x.drawImage(c,0,0,24,24);
+  const d=x.getImageData(0,0,24,24).data;let n=0;
+  for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2];if(b>=r-10&&b>=g-14&&(r+g+b)/3>95)n++}
+  return n/(24*24);
+}
+let pending=null;
+$("#shutter").onclick=()=>{
+  if(!video.videoWidth)return;
+  const vw=video.videoWidth,vh=video.videoHeight;
+  let sw=vw,sh=vh;if(!hw){sw=vw/zoom;sh=vh/zoom}
+  const sc=Math.min(1,2000/sw),c=document.createElement("canvas");
+  c.width=Math.round(sw*sc);c.height=Math.round(sh*sc);
+  c.getContext("2d").drawImage(video,(vw-sw)/2,(vh-sh)/2,sw,sh,0,0,c.width,c.height);
+  const sc2=skyScore(c);
+  c.toBlob(b=>{
+    pending={id:Date.now(),t:Date.now(),blob:b,score:sc2};
+    $("#pvimg").src=URL.createObjectURL(b);
+    $("#pvmsg").textContent=sc2>.6?"What a lovely cloud!":sc2>.3?"Nice, there’s some sky in there.":"Hmm, I can’t see much sky. Keep it anyway?";
+    $("#pv").classList.add("on");
+  },"image/jpeg",0.9);
+};
+$("#retake").onclick=()=>{URL.revokeObjectURL($("#pvimg").src);pending=null;$("#pv").classList.remove("on")};
+let newId=null;
+$("#keep").onclick=async()=>{
+  if(!pending)return;
+  await put(pending);newId=pending.id;pending=null;
+  URL.revokeObjectURL($("#pvimg").src);$("#pv").classList.remove("on");
+  setMood("happy","Added to your cloud garden!");show("buddy");
+  setTimeout(()=>{if(cur==="buddy")show("garden");setMood("idle",HELLO)},2300);
+};
+
+let mem=[],db=null;
+function openDb(){return new Promise(res=>{try{const r=indexedDB.open("cloudgarden",1);r.onupgradeneeded=()=>r.result.createObjectStore("p",{keyPath:"id"});r.onsuccess=()=>{db=r.result;res()};r.onerror=()=>res()}catch(e){res()}})}
+function put(rec){return new Promise(res=>{if(!db){mem.push(rec);return res()}try{const q=db.transaction("p","readwrite").objectStore("p").put(rec);q.onsuccess=()=>res();q.onerror=()=>{mem.push(rec);res()}}catch(e){mem.push(rec);res()}})}
+function all(){return new Promise(res=>{if(!db)return res(mem.slice());try{const q=db.transaction("p","readonly").objectStore("p").getAll();q.onsuccess=()=>res(q.result.concat(mem));q.onerror=()=>res(mem.slice())}catch(e){res(mem.slice())}})}
+function del(id){mem=mem.filter(r=>r.id!==id);return new Promise(res=>{if(!db)return res();try{const q=db.transaction("p","readwrite").objectStore("p").delete(id);q.onsuccess=()=>res();q.onerror=()=>res()}catch(e){res()}})}
+const ready=openDb();
+
+let urls=[],rec=null;
+async function renderGarden(){
+  await ready;
+  const list=(await all()).sort((a,b)=>b.t-a.t);
+  urls.forEach(u=>URL.revokeObjectURL(u));urls=[];
+  const g=$("#grid");g.innerHTML="";
+  $("#gcount").textContent=list.length===1?"1 cloud":list.length+" clouds";
+  $("#empty").style.display=list.length?"none":"block";
+  list.forEach(r=>{
+    const u=URL.createObjectURL(r.blob);urls.push(u);
+    const b=document.createElement("button");b.className="th"+(r.id===newId?" new":"");
+    const i=document.createElement("img");i.src=u;i.alt="Cloud photo";b.append(i);
+    b.onclick=()=>{rec=r;$("#pimg").src=u;$("#pdate").textContent=new Date(r.t).toLocaleString([], {dateStyle:"medium",timeStyle:"short"});show("photo")};
+    g.append(b);
+  });
+}
+$("#back").onclick=()=>show("garden");
+$("#del").onclick=async()=>{if(!rec)return;await del(rec.id);rec=null;toast("Cloud removed");show("garden")};
+$("#share").onclick=async()=>{
+  if(!rec)return;
+  const f=new File([rec.blob],"cloud-"+rec.id+".jpg",{type:"image/jpeg"});
+  try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:"My cloud"});return}}catch(e){if(e&&e.name==="AbortError")return}
+  toast("Press and hold the photo, then choose Download image");
+};
+</script>
+</body>
+</html>

@@ -3,408 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cloud buddy</title>
+<title>Futocoron versions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
 <style>
-:root{--bg:#F6F5F0;--card:#FFFFFF;--ink:#23262B;--mut:#6B6F76;--line:#E2E0D8;--acc:#1F6FA8;--pink:#E58CB3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181B;--card:#1F2327;--ink:#ECEAE4;--mut:#9AA0A6;--line:#30363B;--acc:#7FC4EA}}
-:root[data-theme="dark"]{--bg:#15181B;--card:#1F2327;--ink:#ECEAE4;--mut:#9AA0A6;--line:#30363B;--acc:#7FC4EA}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito",ui-rounded,system-ui,sans-serif;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
-#app{height:100%;display:flex;flex-direction:column}
-main{flex:1;position:relative;min-height:0}
-.view{position:absolute;inset:0;display:none;flex-direction:column}
-.view.on{display:flex}
-nav{display:flex;background:var(--card);border-top:1px solid var(--line)}
-nav button{flex:1;padding:14px 0;border:0;background:none;color:var(--mut);font-weight:700;font-size:15px;font-family:inherit}
-nav button.on{color:var(--acc)}
-#v-buddy{background:#FBFBF8;color:#3C4650;align-items:center;justify-content:center;justify-content:safe center;gap:10px;padding:12px 16px;overflow-y:auto}
-.fw{position:relative;width:min(88vw,340px);aspect-ratio:300/250;flex:none}
-.fw svg{position:absolute;inset:0;width:100%;height:100%}
-#eyes,#lenses{transition:transform .5s ease}
-#eo ellipse{transform-box:fill-box;transform-origin:center;transition:transform .12s}
-#eo.blink ellipse{transform:scaleY(.08)}
-#lenses{position:absolute;inset:0}
-.lens{position:absolute;width:27%;aspect-ratio:1;top:33.6%;border-radius:50%;overflow:hidden;border:4px solid #1A1A1A;box-sizing:border-box;background:#1A1A1A;display:none;transition:transform .12s;cursor:pointer}
-.lens:first-child{left:16.5%}.lens:last-child{left:56.5%}
-.lens video{width:100%;height:100%;object-fit:cover;transform-origin:center;display:block}
-.lens.blink{transform:scaleY(.08)}
-.lens::after{content:"";position:absolute;width:15%;height:15%;border-radius:50%;background:#fff;opacity:.85;top:16%;right:20%;pointer-events:none}
-.live .lens{display:block;animation:eyeopen .7s cubic-bezier(.25,1.6,.45,1) both}
-@keyframes eyeopen{0%{transform:scale(.12,.02);opacity:0}35%{opacity:1}100%{transform:scale(1,1);opacity:1}}
-.live #eo{display:none}.happy #lenses{display:none}
-.fw{transition:width .35s ease}
-.big .fw{width:min(92vw,calc(52vh*.75));aspect-ratio:3/4}
-.big .fw svg{opacity:0}
-.big #lenses{transform:none!important}
-.big .lens:first-child{left:0;top:0;width:100%;height:100%;aspect-ratio:auto;border-radius:30px}
-.big .lens:last-child{display:none}
-.big .lens::after{display:none}
-.hint{margin:0;font-size:13px;color:#6B6F76;display:none}
-.live .hint{display:block}
-#say{margin:0;min-height:3.2em;text-align:center;font-size:18px;font-weight:700;max-width:320px;line-height:1.35}
-.pill{border:0;border-radius:999px;background:#1F6FA8;color:#fff;font-weight:700;font-size:16px;font-family:inherit;padding:13px 24px}
-.ghost{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;font-weight:700;font-size:16px;font-family:inherit;padding:12px 22px}
-.ctl{display:none;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:340px}
-.live .ctl{display:flex}
-#zrow{display:flex;align-items:center;gap:10px;width:100%;font-size:13px;font-weight:700}
-#zoom{flex:1;accent-color:#1F6FA8}
-#shutter{width:66px;height:66px;border-radius:50%;border:4px solid #1F6FA8;background:none;padding:0;position:relative}
-#shutter::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#1F6FA8}
-#pv{position:absolute;inset:0;background:#000;display:none;flex-direction:column;color:#fff;z-index:3}
-#pv.on{display:flex}
-#pvimg,#pimg{flex:1;min-height:0;width:100%;object-fit:contain}
-#pvmsg{text-align:center;padding:12px 18px 4px;font-weight:700;font-size:17px;margin:0;line-height:1.35}
-.row{display:flex;gap:10px;justify-content:center;padding:12px 16px 16px;flex-wrap:wrap}
-#pv .ghost{background:none;color:#fff;border-color:#666}
-.page{overflow-y:auto;padding:18px 16px}
-h1{margin:0;font-size:24px}
-#gcount{margin:2px 0 14px;color:var(--mut);font-size:14px}
-#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px 8px}.grp{grid-column:1/-1;margin:8px 0 0;font-size:16px}.card .th{width:100%;display:block}.cap{margin:6px 2px 0;font-size:12px;line-height:1.35;color:var(--mut);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-.th{aspect-ratio:1;border:0;padding:0;border-radius:12px;overflow:hidden;background:var(--card)}
-.th img{width:100%;height:100%;object-fit:cover;display:block}
-.th.new{outline:3px solid var(--pink)}
-#empty{display:none;color:var(--mut);line-height:1.5;padding:30px 10px;text-align:center}
-#pdate{text-align:center;color:var(--mut);font-size:14px;margin:10px 16px 0}
-#pdesc{text-align:center;margin:6px 16px 0;font-weight:700;line-height:1.35}
-.set{display:block;margin:18px 0 0;font-weight:700}
-.set input[type=password]{display:block;width:100%;box-sizing:border-box;margin-top:8px;padding:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font-size:16px}
-.note{color:var(--mut);font-size:14px;line-height:1.5}
-#toast{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);background:#23262B;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;display:none;max-width:86%;text-align:center;z-index:5}
-.side{display:contents}
-@media (orientation:landscape) and (max-height:600px){
-nav button{padding:8px 0}
-.side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex:1;min-width:0}
-#v-buddy.on{flex-direction:row;gap:16px;padding:8px 16px}
-#v-buddy .fw{width:min(46vw,calc((100vh - 84px)*1.2))}
-#v-buddy.big .fw{aspect-ratio:4/3;width:min(52vw,calc((100vh - 84px)*1.333))}
-#say{min-height:0;font-size:16px;max-width:none}
-.ctl{max-width:100%;gap:6px}
-#shutter{width:54px;height:54px}
-.ghost{padding:9px 18px;font-size:15px}
-.pill{padding:11px 22px}
-#pv.on{flex-direction:row}
-#pvimg{height:100%}
-#pv .side{flex:0 0 36%;min-width:200px}
-#v-photo.on{flex-direction:row}
-#pimg{height:100%}
-#v-photo .side{flex:0 0 38%;min-width:220px}
-.page{padding:12px 16px}
-}
-@media (prefers-reduced-motion:reduce){#eyes,#lenses{transition:none}}
+:root{--bg:#FBFBF8;--card:#FFFFFF;--ink:#23262B;--mut:#6B6F76;--line:#E2E0D8;--acc:#1F6FA8;--pink:#E58CB3}
+@media (prefers-color-scheme:dark){:root{--bg:#15181B;--card:#1F2327;--ink:#ECEAE4;--mut:#9AA0A6;--line:#30363B;--acc:#7FC4EA}}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito",ui-rounded,system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:28px 16px 40px}
+svg{display:block;width:150px;margin:0 auto}
+h1{font-size:28px;margin:10px 0 2px;text-align:center}
+.sub{color:var(--mut);text-align:center;margin:0 0 22px;line-height:1.45}
+a.v{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-top:12px}
+a.v:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+a.v.latest{border:2px solid var(--pink)}
+.top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.name{font-size:19px;font-weight:700}
+.date{color:var(--mut);font-size:14px}
+.tag{font-size:12px;font-weight:700;background:var(--pink);color:#3A1426;border-radius:999px;padding:2px 10px}
+.what{margin:6px 0 0;color:var(--mut);line-height:1.45;font-size:15px}
+.foot{color:var(--mut);font-size:14px;line-height:1.5;margin-top:24px}
 </style>
 </head>
 <body>
-<div id="app">
 <main>
-<section id="v-buddy" class="view on">
-<div class="fw">
-<svg viewBox="0 0 300 250" role="img" aria-label="Cloud buddy face">
-<ellipse cx="52" cy="172" rx="26" ry="20" fill="#E58CB3"/>
-<ellipse cx="248" cy="172" rx="26" ry="20" fill="#E58CB3"/>
-<g id="eyes">
-<g id="eo"><ellipse cx="90" cy="125" rx="11" ry="14" fill="#1A1A1A"/><ellipse cx="210" cy="125" rx="11" ry="14" fill="#1A1A1A"/></g>
-<g id="eh" style="display:none" fill="none" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round"><path d="M76 135 Q90 112 104 135"/><path d="M196 135 Q210 112 224 135"/></g>
-</g>
-<path id="mouth" d="M125 178 Q150 198 175 178" fill="none" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<svg viewBox="0 0 300 250" role="img" aria-label="Futocoron face">
+<ellipse cx="52" cy="172" rx="26" ry="20" fill="#E58CB3"/><ellipse cx="248" cy="172" rx="26" ry="20" fill="#E58CB3"/>
+<ellipse cx="90" cy="125" rx="11" ry="14" fill="currentColor"/><ellipse cx="210" cy="125" rx="11" ry="14" fill="currentColor"/>
+<path d="M125 178 Q150 198 175 178" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
 </svg>
-<div id="lenses"><div class="lens"><video autoplay playsinline muted></video></div><div class="lens"><video autoplay playsinline muted></video></div></div>
-</div>
-<div class="side"><p class="hint">Tap an eye to look closer</p>
-<p id="say">Hello! Open my eyes and let’s look at the sky.</p>
-<div class="ctl"><div id="lensrow" style="display:flex;gap:8px"></div><div id="zrow"><span id="zl">1.0×</span><input type="range" id="zoom" min="1" max="5" step="0.1" value="1" aria-label="Zoom"></div><button id="shutter" aria-label="Take photo"></button><button class="ghost" id="ask">What do you see?</button></div>
-<button class="pill" id="go">Open my eyes</button>
-<button class="ghost" id="native" hidden>Use phone camera app</button><input type="file" id="nat" accept="image/*" capture="environment" hidden></div>
-<div id="pv"><img id="pvimg" alt="Photo preview"><div class="side"><p id="pvmsg"></p><div class="row"><button class="ghost" id="retake">Retake</button><button class="pill" id="keep">Add to garden</button></div></div></div>
-</section>
-<section id="v-garden" class="view page">
-<h1>Cloud garden</h1><p id="gcount"></p>
-<select id="sort" style="width:100%;padding:10px;margin-bottom:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font-size:16px;font-family:inherit" aria-label="Sort clouds"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="type">By cloud type</option><option value="mood">By weather</option><option value="cover">Most cloud covered</option><option value="clear">Clearest sky</option></select>
-<div id="grid"></div>
-<p id="empty">No clouds yet.<br>Go to Buddy and find one.</p>
-</section>
-<section id="v-photo" class="view">
-<img id="pimg" alt="Cloud photo"><div class="side"><p id="pdesc"></p><p id="ptags" class="note" style="text-align:center;margin:4px 16px 0"></p><p id="pdate"></p>
-<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="share">Save or share</button><button class="ghost" id="del">Delete</button></div></div>
-</section>
-<section id="v-set" class="view page">
-<h1>Settings</h1>
-<label class="set"><input type="checkbox" id="voice"> Speak aloud</label>
-<label class="set">Claude API key (optional)<input type="password" id="key" placeholder="sk-ant-..." autocomplete="off"></label>
-<button class="ghost" id="testkey" style="margin-top:14px">Test key</button><p class="note" id="keymsg"></p><p class="note">With a key, Buddy asks Claude to describe whatever it sees and link it to the weather. The key stays on this phone and is only sent to Anthropic. Without one, Buddy makes a simple guess by itself.</p>
-</section>
-<div id="toast"></div>
+<h1>Futocoron</h1>
+<p class="sub">Pick a version to open.</p>
+<div id="list"></div>
+<p class="foot">All versions share one cloud garden on this phone, so your photos appear in each of them. Older versions show fewer details for each photo.</p>
 </main>
-<nav><button data-v="buddy" class="on">Buddy</button><button data-v="garden">Garden</button><button data-v="set">Settings</button></nav>
-</div>
 <script>
-const $=s=>document.querySelector(s);
-const views={buddy:$("#v-buddy"),garden:$("#v-garden"),photo:$("#v-photo"),set:$("#v-set")};
-const vids=[...document.querySelectorAll(".lens video")],lenses=[...document.querySelectorAll(".lens")];
-const say=$("#say"),mouth=$("#mouth");
-const HELLO="I can see! Point me at some clouds.";
-let lastCf=0,lastErr="";
-let cur="buddy",mood="idle",lastAct=Date.now(),tilted=false,wantCam=false,flap=null;
-const ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
-
-function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",t.length>50?8000:2800)}
-function show(n){
-  if(cur==="buddy"&&n!=="buddy")stopCam();
-  cur=n;lastAct=Date.now();
-  for(const k in views)views[k].classList.toggle("on",k===n);
-  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===n||(n==="photo"&&b.dataset.v==="garden")));
-  if(n==="buddy"&&wantCam&&!stream)startCam();
-  if(n==="garden")renderGarden();
-}
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>show(b.dataset.v));
-
-const M={
-  idle:{y:0,d:"M125 178 Q150 198 175 178",f:"none",h:0},
-  curious:{y:-34,d:"M141 184 Q150 204 159 184 Q150 176 141 184Z",f:"#1A1A1A",h:0},
-  happy:{y:0,d:"M112 172 Q150 218 188 172",f:"none",h:1},
-  talk:{y:0,d:"M136 180 Q150 210 164 180Z",f:"#1A1A1A",h:0}
-};
-function moveEyes(x,y){$("#eyes").style.transform="translate("+x+"px,"+y+"px)";$("#lenses").style.transform="translate("+x/3+"%,"+y/2.5+"%)"}
-function setMouth(o){mouth.setAttribute("d",o.d);mouth.setAttribute("fill",o.f)}
-function setMood(k,text){
-  mood=k;const o=M[k];moveEyes(0,o.y);setMouth(o);
-  $("#v-buddy").classList.toggle("happy",!!o.h);$("#eo").style.display=o.h?"none":"";$("#eh").style.display=o.h?"":"none";
-  if(text!==undefined)say.textContent=text;
-}
-function blink(){$("#eo").classList.add("blink");if(!$("#v-buddy").classList.contains("big"))lenses.forEach(l=>l.classList.add("blink"));setTimeout(()=>{$("#eo").classList.remove("blink");lenses.forEach(l=>l.classList.remove("blink"))},150)}
-setInterval(()=>{if(cur==="buddy"&&mood!=="happy")blink()},3300);
-setInterval(()=>{if(cur!=="buddy"||mood!=="idle")return;moveEyes((Math.random()-.5)*22,0);setTimeout(()=>{if(mood==="idle")moveEyes(0,0)},1300)},6500);
-setInterval(()=>{if(cur==="buddy"&&mood==="idle"&&wantCam&&Date.now()-lastAct>20000)setMood("curious","Is there a cloud out there?")},4000);
-$(".fw").onclick=()=>{lastAct=Date.now();wake();if($("#v-buddy").classList.contains("big"))return;setMood("happy","Hehe.");setTimeout(()=>setMood("idle",HELLO),1500)};
-lenses.forEach(l=>l.onclick=e=>{
-  if(!stream)return;e.stopPropagation();lastAct=Date.now();
-  const v=$("#v-buddy");v.classList.toggle("big");
-  lenses.forEach(x=>{x.style.animation="none";void x.offsetWidth;x.style.animation=""});
-  $(".hint").textContent=v.classList.contains("big")?"Tap the picture to see my face again":"Tap an eye to look closer";
+// Newest first. To add a version: upload its file next to this one and add a line here.
+const VERSIONS=[
+  {file:"v2-field-notes.html",name:"Version 2: Field notes",date:"12 Nov 2026",what:"The camera lives in Futocoron’s eyes. Each photo gets your description, Futocoron’s description, cloud type, weather, GPS, the forecast and a prediction."},
+  {file:"v1-first-look.html",name:"Version 1: First look",date:"9 Nov 2026",what:"The first sketch: a face, a separate camera screen with zoom, and a simple garden."}
+];
+const list=document.getElementById("list");
+VERSIONS.forEach((v,i)=>{
+  const a=document.createElement("a");a.className="v"+(i===0?" latest":"");a.href=v.file;
+  const top=document.createElement("div");top.className="top";
+  const n=document.createElement("span");n.className="name";n.textContent=v.name;top.append(n);
+  if(i===0){const t=document.createElement("span");t.className="tag";t.textContent="Latest";top.append(t)}
+  const d=document.createElement("span");d.className="date";d.textContent=v.date;top.append(d);
+  const w=document.createElement("p");w.className="what";w.textContent=v.what;
+  a.append(top,w);list.append(a);
 });
-window.addEventListener("deviceorientation",e=>{
-  if(cur!=="buddy"||e.beta==null)return;
-  if(e.beta>115&&mood==="idle"){tilted=true;setMood("curious","Ooh, look at all that sky!")}
-  else if(e.beta<100&&tilted&&mood==="curious"){tilted=false;setMood("idle",HELLO)}
-});
-let lock=null;
-async function wake(){try{if(navigator.wakeLock&&!lock){lock=await navigator.wakeLock.request("screen");lock.addEventListener("release",()=>lock=null)}}catch(e){}}
-document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")wake()});
-
-const full=o=>((o.seen||"")+" "+(o.weather||"")).trim();
-function talk(t){
-  say.textContent=t;lastAct=Date.now();
-  if(ls("cb_voice")!=="0"&&window.speechSynthesis){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.pitch=1.5;u.rate=.95;speechSynthesis.speak(u)}catch(e){}}
-  clearInterval(flap);let n=0;
-  flap=setInterval(()=>setMouth(n++%2?M.idle:M.talk),190);
-  setTimeout(()=>{clearInterval(flap);setMouth(M[mood])},Math.min(9000,t.length*70));
-}
-
-let stream=null,track=null,hw=false,zmin=1,zmax=5,zoom=1;
-const slider=$("#zoom");
-async function startCam(devId){
-  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}
-  $("#native").hidden=true;
-  try{
-    if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)throw {name:"NoMediaDevices"};
-    try{stream=await navigator.mediaDevices.getUserMedia({video:{...(devId?{deviceId:{exact:devId}}:{facingMode:{ideal:"environment"}}),width:{ideal:innerWidth>innerHeight?1920:1080},height:{ideal:innerWidth>innerHeight?1080:1920}},audio:false})}
-    catch(e1){if(e1&&(e1.name==="NotAllowedError"||e1.name==="SecurityError"))throw e1;stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false})}
-    vids.forEach(v=>{v.srcObject=stream;v.play().catch(()=>{})});
-    track=stream.getVideoTracks()[0];
-    let caps={};try{caps=track.getCapabilities?track.getCapabilities():{}}catch(e){}
-    if(caps.zoom){hw=true;zmin=caps.zoom.min;zmax=caps.zoom.max}else{hw=false;zmin=1;zmax=5}
-    slider.min=zmin;slider.max=zmax;slider.step=Math.max(0.05,(zmax-zmin)/100);
-    wantCam=true;$("#v-buddy").classList.add("live");$("#go").hidden=true;
-    setZoom(zmin);wake();setMood("idle",HELLO);buildLenses();
-  }catch(err){
-    const n=(err&&err.name)||"Error";
-    say.textContent=(n==="NotAllowedError"||n==="SecurityError")?"My eyes are blocked ("+n+"). Allow Camera in Chrome’s site settings, then try again.":n==="NotReadableError"?"Another app is using the camera. Close it, then try again.":"My eyes aren’t working ("+n+").";
-    $("#go").textContent="Try again";$("#go").hidden=false;$("#native").hidden=false;
-  }
-}
-async function buildLenses(){
-  try{
-    const devs=(await navigator.mediaDevices.enumerateDevices()).filter(d=>d.kind==="videoinput"&&!/front/i.test(d.label));
-    const row=$("#lensrow");row.innerHTML="";
-    if(devs.length<2)return;
-    const active=track&&track.getSettings?track.getSettings().deviceId:null;
-    devs.forEach((d,i)=>{
-      const b=document.createElement("button");b.className="ghost";
-      b.style.cssText="padding:6px 14px;font-size:14px"+(d.deviceId===active?";border-color:#1F6FA8;color:#1F6FA8":"");
-      b.textContent="Lens "+(i+1);
-      b.onclick=()=>{startCam(d.deviceId);toast(d.label||("Lens "+(i+1)))};
-      row.append(b);
-    });
-  }catch(e){}
-}
-function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;track=null}vids.forEach(v=>v.srcObject=null);$("#v-buddy").classList.remove("live","big");$("#pv").classList.remove("on")}
-function setZoom(z){
-  z=Math.min(zmax,Math.max(zmin,z));zoom=z;slider.value=z;
-  $("#zl").textContent=z.toFixed(1)+"×";
-  if(hw&&track){track.applyConstraints({advanced:[{zoom:z}]}).catch(()=>{});vids.forEach(v=>v.style.transform="")}
-  else vids.forEach(v=>v.style.transform="scale("+z+")");
-}
-slider.oninput=()=>setZoom(parseFloat(slider.value));
-$("#go").onclick=()=>startCam();
-let oT=null;
-function onRot(){clearTimeout(oT);oT=setTimeout(()=>{if(!stream||cur!=="buddy")return;const v=vids[0];if(!v.videoWidth)return;if((v.videoWidth>v.videoHeight)!==(innerWidth>innerHeight)){let id=null;try{id=track.getSettings().deviceId}catch(e){}startCam(id)}},500)}
-addEventListener("orientationchange",onRot);addEventListener("resize",onRot);
-let pd=0,pz=1;
-const dist=e=>Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-$("#v-buddy").addEventListener("touchstart",e=>{if(e.touches.length===2){pd=dist(e);pz=zoom}},{passive:true});
-$("#v-buddy").addEventListener("touchmove",e=>{if(stream&&e.touches.length===2&&pd){e.preventDefault();setZoom(pz*dist(e)/pd)}},{passive:false});
-$("#v-buddy").addEventListener("touchend",()=>{pd=0});
-
-function grab(){
-  const v=vids[0];if(!v.videoWidth)return null;
-  const vw=v.videoWidth,vh=v.videoHeight;let sw=vw,sh=vh;if(!hw){sw=vw/zoom;sh=vh/zoom}
-  const sc=Math.min(1,2000/sw),c=document.createElement("canvas");
-  c.width=Math.round(sw*sc);c.height=Math.round(sh*sc);
-  c.getContext("2d").drawImage(v,(vw-sw)/2,(vh-sh)/2,sw,sh,0,0,c.width,c.height);
-  return c;
-}
-function localDescribe(c){const t=localText(c),m=t.match(/nimbostratus|stratocumulus|altocumulus|cirrus|cumulus|stratus/i);return {seen:t,weather:"",cloud:m?m[0].toLowerCase():/Clear/.test(t)?"none":"unclear",mood:/Rain/.test(t)?"rainy":/Clear/.test(t)?"clear":m?"cloudy":"unknown"}}
-function localText(c){
-  const N=48,s=document.createElement("canvas");s.width=s.height=N;
-  const x=s.getContext("2d");x.drawImage(c,0,0,N,N);
-  const d=x.getImageData(0,0,N,N).data;
-  let blue=0,white=0,grey=0,dark=0,other=0,tex=0,tn=0;
-  for(let i=0;i<d.length;i+=4){
-    const r=d[i],g=d[i+1],b=d[i+2],l=(r+g+b)/3;
-    if(b>r+14&&b>=g)blue++;else if(g>b+8||r>b+22)other++;else if(l>185)white++;else if(l>95)grey++;else dark++;
-    if(i%(N*4)>=4){tex+=Math.abs(l-(d[i-4]+d[i-3]+d[i-2])/3);tn++}
-  }
-  tex/=Math.max(1,tn);const t=N*N,sky=blue+white+grey+dark,cf=(white+grey+dark)/Math.max(1,sky);lastCf=cf;
-  if(other/t>.5)return "My Claude brain is not answering, so I can only guess about skies right now.";
-  if(cf<.08)return "Clear blue sky. No clouds right now.";
-  if(dark/t>.2&&cf>.6)return "Dark, heavy clouds. I think nimbostratus. Rain may be near.";
-  if(cf>.85&&grey>white)return "A grey blanket of cloud. I think it’s stratus, a low flat layer.";
-  if(cf>.85)return "White cloud everywhere. Maybe stratocumulus, soft lumpy rolls.";
-  if(tex<8&&cf<.55)return "Thin, wispy streaks. I think it’s cirrus, very high ice clouds.";
-  if(cf>.5)return "Lots of small cloud patches. Maybe altocumulus, like a flock of sheep.";
-  return "Puffy white clouds with blue gaps. I think it’s cumulus, the fair-weather kind.";
-}
-const PROMPT=`You are a gentle, curious plush weather-spotting buddy talking to a child. Look at this photo. It may show anything: sky, a person, an object, food, a street. First say in one short sentence what you see (for people, only general things like clothing or what they are doing, never who they are). Then in one short sentence relate it playfully to clouds or weather: how weather affects it, what the light or shadows say, or what clouds might be above it. If clouds are visible, name the type. Reply with ONLY JSON like {"seen":"...","weather":"...","cloud":"cumulus|cirrus|stratus|stratocumulus|altocumulus|nimbostratus|cumulonimbus|none","mood":"sunny|cloudy|rainy|stormy|foggy|snowy|clear|unknown"}. Use simple words. No emoji.`;
-const OLDP="You are a gentle, curious plush weather-spotting buddy talking to a child. Look at this photo. In at most three short, simple sentences, say what you see (it could be anything: sky, trees, puddles, buildings, animals, objects, people in general) and connect it to the weather in a fun way, such as what the weather might be, what the light, shadows or wet ground tell us, or how weather affects that thing. If you can see clouds, name the kind. No lists, no emoji. Never guess personal details about people.";
-function parseCloud(txt){
-  const f=k=>{const m=txt.match(new RegExp('"'+k+'"\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)'));if(!m)return "";try{return JSON.parse('"'+m[1]+'"')}catch(e){return m[1].replace(/\\"/g,'"')}};
-  const o={seen:f("seen"),weather:f("weather"),cloud:f("cloud")||"unclear",mood:f("mood")||"unknown"};
-  if(!o.seen){o.seen=txt.replace(/```json|```/g,"").replace(/^[\s{"]*seen["\s:]*/i,"").trim();o.weather=""}
-  return o;
-}
-async function describe(c){
-  lastErr="";const loc=localDescribe(c);loc.cf=lastCf;
-  const key=ls("cb_key");
-  if(key){
-    try{
-      const sc=Math.min(1,640/c.width),s=document.createElement("canvas");
-      s.width=Math.round(c.width*sc);s.height=Math.round(c.height*sc);
-      s.getContext("2d").drawImage(c,0,0,s.width,s.height);
-      const data=s.toDataURL("image/jpeg",.8).split(",")[1];
-      const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"content-type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:800,messages:[{role:"user",content:[{type:"image",source:{type:"base64",media_type:"image/jpeg",data}},{type:"text",text:PROMPT}]}]})});
-      if(!r.ok)throw new Error(r.status+" "+(await r.text()).slice(0,140));
-      const j=await r.json(),txt=(j.content||[]).filter(p=>p.type==="text").map(p=>p.text).join(" ").trim();
-      if(txt){const o=parseCloud(txt);if(o.seen){o.cf=loc.cf;if(j.stop_reason==="max_tokens"){const e=o.weather||o.seen;if(!/[.!?]$/.test(e.trim())){if(o.weather)o.weather+="…";else o.seen+="…"}}return o}}
-      lastErr="Claude sent an empty reply ("+j.stop_reason+")";
-    }catch(e){lastErr="Claude error: "+(e&&e.message||e);toast(lastErr)}
-  }
-  return loc;
-}
-$("#ask").onclick=()=>{
-  const c=grab();if(!c)return;
-  say.textContent="Let me look…";
-  describe(c).then(o=>{talk(full(o));if(lastErr)toast(lastErr)});
-};
-
-let pending=null;
-function preview(c,b){
-  const p=pending={id:Date.now(),t:Date.now(),blob:b,desc:""};
-  $("#pvimg").src=URL.createObjectURL(b);$("#pvmsg").textContent="Let me look…";$("#pv").classList.add("on");
-  describe(c).then(o=>{if(pending!==p)return;const txt=full(o);Object.assign(p,{desc:txt,seen:o.seen,weather:o.weather,cloud:o.cloud,mood:o.mood,cf:o.cf});$("#pvmsg").textContent=txt+(lastErr?"  ["+lastErr+"]":"");talk(txt)});
-}
-$("#shutter").onclick=()=>{const c=grab();if(c)c.toBlob(b=>preview(c,b),"image/jpeg",0.9)};
-$("#nat").onchange=async e=>{
-  const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
-  try{const bm=await createImageBitmap(f),sc=Math.min(1,1600/bm.width),c=document.createElement("canvas");
-    c.width=Math.round(bm.width*sc);c.height=Math.round(bm.height*sc);c.getContext("2d").drawImage(bm,0,0,c.width,c.height);
-    c.toBlob(b=>preview(c,b),"image/jpeg",0.9)}catch(err){toast("Couldn’t read that photo.")}
-};
-$("#native").onclick=()=>$("#nat").click();
-$("#retake").onclick=()=>{URL.revokeObjectURL($("#pvimg").src);pending=null;$("#pv").classList.remove("on");try{speechSynthesis.cancel()}catch(e){}};
-let newId=null;
-$("#keep").onclick=async()=>{
-  if(!pending)return;
-  await put(pending);newId=pending.id;pending=null;
-  URL.revokeObjectURL($("#pvimg").src);$("#pv").classList.remove("on");
-  try{speechSynthesis.cancel()}catch(e){}
-  setMood("happy","Added to your cloud garden!");
-  setTimeout(()=>{if(cur==="buddy")show("garden");setMood("idle",HELLO)},2300);
-};
-
-let mem=[],db=null;
-function openDb(){return new Promise(res=>{try{const r=indexedDB.open("cloudgarden",1);r.onupgradeneeded=()=>r.result.createObjectStore("p",{keyPath:"id"});r.onsuccess=()=>{db=r.result;res()};r.onerror=()=>res()}catch(e){res()}})}
-function put(rec){return new Promise(res=>{if(!db){mem.push(rec);return res()}try{const q=db.transaction("p","readwrite").objectStore("p").put(rec);q.onsuccess=()=>res();q.onerror=()=>{mem.push(rec);res()}}catch(e){mem.push(rec);res()}})}
-function all(){return new Promise(res=>{if(!db)return res(mem.slice());try{const q=db.transaction("p","readonly").objectStore("p").getAll();q.onsuccess=()=>res(q.result.concat(mem));q.onerror=()=>res(mem.slice())}catch(e){res(mem.slice())}})}
-function del(id){mem=mem.filter(r=>r.id!==id);return new Promise(res=>{if(!db)return res();try{const q=db.transaction("p","readwrite").objectStore("p").delete(id);q.onsuccess=()=>res();q.onerror=()=>res()}catch(e){res()}})}
-const ready=openDb();
-
-let urls=[],rec=null;
-const pretty=s=>s.charAt(0).toUpperCase()+s.slice(1);
-const kt=r=>r.cloud&&r.cloud!=="unclear"?r.cloud:"zz",km=r=>r.mood&&r.mood!=="unknown"?r.mood:"zz";
-function sortList(l,m){
-  const a=l.slice();
-  if(m==="old")a.sort((x,y)=>x.t-y.t);
-  else if(m==="cover")a.sort((x,y)=>(y.cf??-1)-(x.cf??-1));
-  else if(m==="clear")a.sort((x,y)=>(x.cf??2)-(y.cf??2));
-  else if(m==="type")a.sort((x,y)=>kt(x).localeCompare(kt(y))||y.t-x.t);
-  else if(m==="mood")a.sort((x,y)=>km(x).localeCompare(km(y))||y.t-x.t);
-  else a.sort((x,y)=>y.t-x.t);
-  return a;
-}
-function groupKey(r,m){
-  if(m==="type")return kt(r)==="zz"?"Unsorted":kt(r)==="none"?"No clouds":pretty(kt(r));
-  if(m==="mood")return km(r)==="zz"?"Unsorted":pretty(km(r));
-  return null;
-}
-$("#sort").onchange=()=>renderGarden();
-async function renderGarden(){
-  await ready;
-  let lastKey=null;const mode=$("#sort").value,list=sortList(await all(),mode);
-  urls.forEach(u=>URL.revokeObjectURL(u));urls=[];
-  const g=$("#grid");g.innerHTML="";
-  $("#gcount").textContent=list.length===1?"1 cloud":list.length+" clouds";
-  $("#empty").style.display=list.length?"none":"block";
-  list.forEach(r=>{
-    const key=groupKey(r,mode);if(key&&key!==lastKey){lastKey=key;const h=document.createElement("h3");h.className="grp";h.textContent=key;g.append(h)}
-    const u=URL.createObjectURL(r.blob);urls.push(u);
-    const b=document.createElement("button");b.className="th"+(r.id===newId?" new":"");
-    const i=document.createElement("img");i.src=u;i.alt="Cloud photo";b.append(i);
-    b.onclick=()=>{rec=r;$("#pimg").src=u;$("#pdesc").textContent=r.desc||"";$("#ptags").textContent=[kt(r)!=="zz"?"Cloud: "+r.cloud:"",km(r)!=="zz"?"Weather: "+r.mood:""].filter(Boolean).join("   ");$("#pdate").textContent=new Date(r.t).toLocaleString([], {dateStyle:"medium",timeStyle:"short"});show("photo")};
-    const card=document.createElement("div"),cap=document.createElement("p");cap.className="cap";cap.textContent=r.desc||"No description yet.";card.append(b,cap);g.append(card);
-  });
-}
-$("#back").onclick=()=>show("garden");
-$("#del").onclick=async()=>{if(!rec)return;await del(rec.id);rec=null;toast("Cloud removed");show("garden")};
-$("#share").onclick=async()=>{
-  if(!rec)return;
-  const f=new File([rec.blob],"cloud-"+rec.id+".jpg",{type:"image/jpeg"});
-  try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:"My cloud"});return}}catch(e){if(e&&e.name==="AbortError")return}
-  toast("Press and hold the photo, then choose Download image");
-};
-$("#testkey").onclick=async()=>{
-  const key=ls("cb_key"),m=$("#keymsg");
-  if(!key){m.textContent="Paste a key first.";return}
-  m.textContent="Testing…";
-  try{
-    const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"content-type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-haiku-5-5",max_tokens:20,messages:[{role:"user",content:"Say hi in three words."}]})});
-    const j=await r.json();
-    m.textContent=r.ok?"Key works. Claude says: "+j.content[0].text:"Problem ("+r.status+"): "+((j.error&&j.error.message)||"unknown");
-  }catch(e){m.textContent="Couldn’t reach Anthropic: "+e.message}
-};
-$("#voice").checked=ls("cb_voice")!=="0";
-$("#voice").onchange=e=>ls("cb_voice",e.target.checked?"1":"0");
-$("#key").value=ls("cb_key")||"";
-$("#key").oninput=e=>{ls("cb_key",e.target.value.trim());$("#keymsg").textContent="Saved on this phone."};
 </script>
 </body>
 </html>
